@@ -59,4 +59,4 @@ const ShinyButton = ({ children, className, ...props }: ShinyButtonProps) => {
   );
 };
 
-export default ShinyButton;
+export { ShinyButton };

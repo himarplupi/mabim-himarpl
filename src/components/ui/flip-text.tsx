@@ -12,7 +12,7 @@ interface SlightFlipProps {
   className?: string;
 }
 
-export default function SlightFlip({
+export function SlightFlip({
   word,
   duration = 0.5,
   delayMultiple = 0.08,

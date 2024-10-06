@@ -65,7 +65,7 @@ interface SparklesTextProps {
   };
 }
 
-const SparklesText: React.FC<SparklesTextProps> = ({
+export const SparklesText: React.FC<SparklesTextProps> = ({
   text,
   colors = { first: "#9E7AFF", second: "#FE8BBB" },
   className,
@@ -107,6 +107,8 @@ const SparklesText: React.FC<SparklesTextProps> = ({
     const interval = setInterval(updateStars, 100);
 
     return () => clearInterval(interval);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colors.first, colors.second]);
 
   return (
@@ -153,5 +155,3 @@ const Sparkle: React.FC<Sparkle> = ({ id, x, y, color, delay, scale }) => {
     </motion.svg>
   );
 };
-
-export default SparklesText;
