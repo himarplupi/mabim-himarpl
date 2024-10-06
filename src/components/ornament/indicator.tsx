@@ -30,6 +30,7 @@ export function RhombusIndicator({ className, pathClassName }: IndicatorProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 11 21"
       className={cn("h-8 w-8 fill-none", className)}
     >
       <path
@@ -44,6 +45,7 @@ export function MenuIndicator({ className, pathClassName }: IndicatorProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 13"
       className={cn("h-4 w-8 fill-none", className)}
     >
       <path

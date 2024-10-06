@@ -20,6 +20,7 @@ function TopLeftCorner({ className, pathClassName }: BorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 36 35"
       className={cn("h-8 w-8 fill-none", className)}
     >
       <path
@@ -34,6 +35,7 @@ function TopRightCorner({ className, pathClassName }: BorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 36 35"
       className={cn("h-8 w-8 fill-none", className)}
     >
       <path
@@ -48,6 +50,7 @@ function BottomLeftCorner({ className, pathClassName }: BorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 36 35"
       className={cn("h-8 w-8 fill-none", className)}
     >
       <path
@@ -62,6 +65,7 @@ function BottomRightCorner({ className, pathClassName }: BorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 36 35"
       className={cn("h-8 w-8 fill-none", className)}
     >
       <path

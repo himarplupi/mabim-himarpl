@@ -9,6 +9,7 @@ export function Separator({ className, pathClassName }: SeparatorProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 441 14"
       className={cn("h-8 w-full fill-none", className)}
     >
       <path
