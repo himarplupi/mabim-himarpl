@@ -10,8 +10,11 @@ export default {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         bonobo: ["var(--font-bonobo)", ...fontFamily.serif],
         zelda: ["var(--font-zelda)", ...fontFamily.serif],
-        rockNRollOne: ["var(--font-rock-n-roll-one)", ...fontFamily.sans],
-        sheikahComplete: ["var(--font-sheikah-complete)", ...fontFamily.sans],
+        "rock-n-roll-one": ["var(--font-rock-n-roll-one)", ...fontFamily.sans],
+        "sheikah-complete": [
+          "var(--font-sheikah-complete)",
+          ...fontFamily.sans,
+        ],
       },
       borderRadius: {
         lg: "var(--radius)",

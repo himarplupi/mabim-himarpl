@@ -38,7 +38,7 @@ export function Hieroglyph({ className, length = 16 }: HieroglyphProps) {
   return (
     <div
       className={cn(
-        "font-sheikahComplete text-lg tracking-tight text-foreground",
+        "font-sheikah-complete text-lg tracking-tight text-foreground",
         className,
       )}
       aria-label="Hieroglyph"
