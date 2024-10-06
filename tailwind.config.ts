@@ -21,6 +21,36 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "#7CAD35",
+          foreground: "#F5FAEB",
+          50: "#F5FAEB",
+          100: "#E8F4D3",
+          200: "#D3EAAC",
+          300: "#B7DA7C",
+          400: "#92C445",
+          500: "#7CAD35",
+          600: "#5F8A26",
+          700: "#496A21",
+          800: "#3C551F",
+          900: "#34481F",
+          950: "#1A270C",
+        },
+        secondary: {
+          DEFAULT: "#577574",
+          foreground: "#F5F8F7",
+          50: "#F5F8F7",
+          100: "#DFE8E7",
+          200: "#BFD0CE",
+          300: "#97B1AE",
+          400: "#6A8785",
+          500: "#577574",
+          600: "#445D5C",
+          700: "#394C4B",
+          800: "#303F3F",
+          900: "#2B3636",
+          950: "#161D1D",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -28,14 +58,6 @@ export default {
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
-        },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
