@@ -1,7 +1,12 @@
 import { type Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 
-import { fontBonobo, fontRockNRollOne, fontZelda } from "./fonts";
+import {
+  fontBonobo,
+  fontRockNRollOne,
+  fontSheikahComplete,
+  fontZelda,
+} from "./fonts";
 
 import "@/styles/globals.css";
 
@@ -17,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${GeistSans.variable} ${fontBonobo.variable} ${fontZelda.variable} ${fontRockNRollOne.variable}`}
+      className={`${GeistSans.variable} ${fontBonobo.variable} ${fontZelda.variable} ${fontRockNRollOne.variable} ${fontSheikahComplete.variable}`}
     >
       <body>{children}</body>
     </html>

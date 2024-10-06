@@ -52,3 +52,13 @@ export const fontRockNRollOne = localFont({
   ],
   variable: "--font-rock-n-roll-one",
 });
+
+export const fontSheikahComplete = localFont({
+  src: [
+    {
+      path: "./SheikahComplete.ttf",
+      weight: "400",
+    },
+  ],
+  variable: "--font-sheikah-complete",
+});

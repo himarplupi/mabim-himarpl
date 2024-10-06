@@ -11,6 +11,7 @@ export default {
         bonobo: ["var(--font-bonobo)", ...fontFamily.serif],
         zelda: ["var(--font-zelda)", ...fontFamily.serif],
         rockNRollOne: ["var(--font-rock-n-roll-one)", ...fontFamily.sans],
+        sheikahComplete: ["var(--font-sheikah-complete)", ...fontFamily.sans],
       },
       borderRadius: {
         lg: "var(--radius)",
