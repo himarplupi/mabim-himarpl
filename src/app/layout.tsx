@@ -1,6 +1,8 @@
 import { type Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 
+import { fontBonobo, fontRockNRollOne, fontZelda } from "./fonts";
+
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +15,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${GeistSans.variable}`}>
+    <html
+      lang="id"
+      className={`${GeistSans.variable} ${fontBonobo.variable} ${fontZelda.variable} ${fontRockNRollOne.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
