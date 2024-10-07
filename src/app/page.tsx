@@ -14,10 +14,10 @@ import { SparklesText } from "@/components/ui/sparkles-text";
 export default function HomePage() {
   const tabData = [
     { label: "TM", date: "2024-10-19" },
-    { label: "Day-1", date: "2024-10-20" },
-    { label: "Day-2", date: "2024-10-21" },
-    { label: "Day-3", date: "2024-10-22" },
-    { label: "Day-4", date: "2024-10-23" },
+    { label: "Day-1", date: "2024-10-26" },
+    { label: "Day-2", date: "2024-11-02" },
+    { label: "Day-3", date: "2024-11-03" },
+    { label: "Day-4", date: "2024-11-09" },
   ];
 
   return (
