@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 
+import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { cn } from "@/lib/utils";
 
 interface HieroglyphProps {
@@ -41,7 +41,6 @@ const letters = [
 
 export function Hieroglyph({ className, length = 16 }: HieroglyphProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // Trigger animation only once
 
   return (
     <div
@@ -53,23 +52,11 @@ export function Hieroglyph({ className, length = 16 }: HieroglyphProps) {
       aria-label="Hieroglyph"
       role="img"
     >
-      {Array.from({ length }).map((_, index) => (
-        <motion.span
-          key={index}
-          initial={{ y: 0, opacity: 0 }}
-          animate={isInView ? { y: -10, opacity: 1 } : { y: 0, opacity: 0 }}
-          exit={{ y: 0, opacity: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 10,
-            mass: 1,
-            delay: index * 0.1, // Stagger the animation
-          }}
-        >
-          {letters[index % letters.length]}
-        </motion.span>
-      ))}
+      <VelocityScroll
+        text={Array.from({ length })
+          .map((_, index) => letters[index % letters.length])
+          .join("")}
+      />
     </div>
   );
 }
