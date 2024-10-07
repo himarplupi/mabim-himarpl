@@ -1,3 +1,8 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
 import { cn } from "@/lib/utils";
 
 interface HieroglyphProps {
@@ -35,8 +40,12 @@ const letters = [
 ];
 
 export function Hieroglyph({ className, length = 16 }: HieroglyphProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // Trigger animation only once
+
   return (
     <div
+      ref={ref}
       className={cn(
         "font-sheikah-complete text-lg tracking-tight text-foreground",
         className,
@@ -45,7 +54,21 @@ export function Hieroglyph({ className, length = 16 }: HieroglyphProps) {
       role="img"
     >
       {Array.from({ length }).map((_, index) => (
-        <span key={index}>{letters[index % letters.length]}</span>
+        <motion.span
+          key={index}
+          initial={{ y: 0, opacity: 0 }}
+          animate={isInView ? { y: -10, opacity: 1 } : { y: 0, opacity: 0 }}
+          exit={{ y: 0, opacity: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            mass: 1,
+            delay: index * 0.1, // Stagger the animation
+          }}
+        >
+          {letters[index % letters.length]}
+        </motion.span>
       ))}
     </div>
   );

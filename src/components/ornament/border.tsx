@@ -5,18 +5,33 @@ interface BorderProps {
   pathClassName?: string;
 }
 
-export function BorderCorner() {
+export function BorderCorner({
+  className,
+  pathClassName,
+}: BorderProps) {
   return (
     <>
-      <TopLeftCorner className={"absolute left-0 top-0"} />
-      <TopRightCorner className={"absolute right-0 top-0"} />
-      <BottomLeftCorner className={"absolute bottom-0 left-0"} />
-      <BottomRightCorner className={"absolute bottom-0 right-0"} />
+      <TopLeftCorner
+        className={cn(`absolute left-2 top-2`, className)}
+        pathClassName={pathClassName}
+      />
+      <TopRightCorner
+        className={cn(`absolute right-2 top-2`, className)}
+        pathClassName={pathClassName}
+      />
+      <BottomLeftCorner
+        className={cn(`absolute bottom-2 left-2`, className)}
+        pathClassName={pathClassName}
+      />
+      <BottomRightCorner
+        className={cn(`absolute bottom-2 right-2`, className)}
+        pathClassName={pathClassName}
+      />
     </>
   );
 }
 
-function TopLeftCorner({ className, pathClassName }: BorderProps) {
+export function TopLeftCorner({ className, pathClassName }: BorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +46,7 @@ function TopLeftCorner({ className, pathClassName }: BorderProps) {
   );
 }
 
-function TopRightCorner({ className, pathClassName }: BorderProps) {
+export function TopRightCorner({ className, pathClassName }: BorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +61,7 @@ function TopRightCorner({ className, pathClassName }: BorderProps) {
   );
 }
 
-function BottomLeftCorner({ className, pathClassName }: BorderProps) {
+export function BottomLeftCorner({ className, pathClassName }: BorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +76,7 @@ function BottomLeftCorner({ className, pathClassName }: BorderProps) {
   );
 }
 
-function BottomRightCorner({ className, pathClassName }: BorderProps) {
+export function BottomRightCorner({ className, pathClassName }: BorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
