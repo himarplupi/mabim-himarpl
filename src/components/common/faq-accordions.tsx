@@ -10,6 +10,7 @@ import {
   TopRightCorner,
 } from "@/components/ornament/border";
 import { AbilityIndicator } from "@/components/ornament/indicator";
+import { cn } from "@/lib/utils";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 const faqs = [
@@ -92,7 +93,13 @@ export function FAQAccordions() {
                 />
               </motion.div>
             )}
-            <AbilityIndicator pathClassName="fill-neutral-50" />
+            <AbilityIndicator
+              className="h-5 w-5"
+              pathClassName={cn(
+                "transition-all duration-300 ease-in-out fill-neutral-400",
+                activeIndex === faq.id && "fill-neutral-50",
+              )}
+            />
             <p className="text-left font-semibold text-neutral-50">
               {faq.question}
             </p>
