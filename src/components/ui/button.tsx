@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { motion, type MotionProps } from "framer-motion"; // Import MotionProps for typing
+import { motion, type MotionProps } from "framer-motion"; // Import MotionProps for typingimport { cn } from "@/lib/utils";
 
 import { cn } from "@/lib/utils";
 import { Slot } from "@radix-ui/react-slot";
