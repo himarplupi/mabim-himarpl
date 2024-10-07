@@ -114,18 +114,104 @@ export default function HomePage() {
       <div className="bg-primary-700/95 pt-32">
         <section className="relative z-10 rounded-md bg-neutral-50">
           <BorderCorner />
-          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
+          <h2 className="p-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
             TIMELINE
           </h2>
-          <div className="space-z-10">
-            <ul className="text-center font-bonobo text-neutral-950">
-              <li>19 Oktober 2024 - Technical Meeting</li>
-              <li>26 Oktober 2024 - Day 1</li>
-              <li>2 November 2024 - Day 2</li>
-              <li>3 November 2024 - Day 3</li>
-              <li>9 November 2024 - Day 4</li>
-            </ul>
-          </div>
+          <ul className="flex justify-center gap-10 font-bonobo font-bold text-neutral-950">
+            <div>
+              <div className="">
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="flex h-14 w-3 bg-neutral-400"></div>
+              </div>
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="h-14 w-3 bg-neutral-400"></div>
+              </div>
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="h-14 w-3 bg-neutral-400"></div>
+              </div>
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="h-14 w-3 bg-neutral-400"></div>
+              </div>
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+              </div>
+            </div>
+            <div>
+              <div className="pb-12">
+                <li className="text-left">19 Oktober 2024</li>
+                <li className="text-left">Technical Meeting</li>
+              </div>
+              <div className="pb-12">
+                <li className="text-left">26 Oktober 2024</li>
+                <li className="text-left">Day 1</li>
+              </div>
+              <div className="pb-12">
+                <li className="text-left">2 November 2024</li>
+                <li className="text-left">Day 2</li>
+              </div>
+              <div className="pb-12">
+                <li className="text-left">3 November 2024</li>
+                <li className="text-left">Day 3</li>
+              </div>
+              <div className="pb-12">
+                <li className="text-left">9 November 2024</li>
+                <li className="text-left">Day 4</li>
+              </div>
+            </div>
+            {/* <div className="flex justify-center">
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="h-14 w-10 bg-neutral-400"></div>
+              </div>
+              <div className="">
+                <li className="text-left">19 Oktober 2024</li>
+                <li className="text-left">Technical Meeting</li>
+              </div>
+            </div>
+            <div className="flex justify-center gap-10">
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="h-14 w-10 bg-neutral-400"></div>
+              </div>
+              <div>
+                <li className="text-left">26 Oktober 2024</li>
+                <li className="text-left">Day 1</li>
+              </div>
+            </div>
+            <div className="flex justify-center gap-10">
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="h-14 w-10 bg-neutral-400"></div>
+              </div>
+              <div>
+                <li className="text-left">2 November 2024</li>
+                <li className="text-left">Day 2</li>
+              </div>
+            </div>
+            <div className="flex justify-center gap-10">
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="h-14 w-10 bg-neutral-400"></div>
+              </div>
+              <div>
+                <li className="text-left">3 November 2024</li>
+                <li className="text-left">Day 3</li>
+              </div>
+            </div>
+            <div className="flex justify-center gap-10">
+              <div>
+                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+                <div className="h-14 w-10 bg-neutral-400"></div>
+              </div>
+              <div>
+                <li className="text-left">9 November 2024</li>
+                <li className="text-left">Day 4</li>
+              </div>
+            </div> */}
+          </ul>
         </section>
       </div>
     </main>
