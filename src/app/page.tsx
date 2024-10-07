@@ -12,15 +12,15 @@ import { CountdownTabs } from "@/components/ui/countdown-tabs";
 import { Input } from "@/components/ui/input";
 import { SparklesText } from "@/components/ui/sparkles-text";
 
-export default function HomePage() {
-  const tabData = [
-    { label: "TM", date: "2024-10-19" },
-    { label: "Day-1", date: "2024-10-26" },
-    { label: "Day-2", date: "2024-11-02" },
-    { label: "Day-3", date: "2024-11-03" },
-    { label: "Day-4", date: "2024-11-09" },
-  ];
+const tabData = [
+  { label: "TM", date: "2024-10-19" },
+  { label: "Day-1", date: "2024-10-26" },
+  { label: "Day-2", date: "2024-11-02" },
+  { label: "Day-3", date: "2024-11-03" },
+  { label: "Day-4", date: "2024-11-09" },
+];
 
+export default function HomePage() {
   return (
     <main
       className="relative min-h-screen overflow-hidden bg-[length:512px_512px] bg-repeat"

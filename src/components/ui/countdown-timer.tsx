@@ -9,19 +9,19 @@ export const ExpiredNotice = () => {
   return (
     <div className="flex">
       <AnimatePresence>
-        <DateTimeDisplay value={0} type={"Hari"} />
+        <DateTimeDisplay key={`Hari${0}`} value={0} type={"Hari"} />
         <p key="item-1" className={textClassName}>
           :
         </p>
-        <DateTimeDisplay value={0} type={"Jam"} />
+        <DateTimeDisplay key={`Jam${0}`} value={0} type={"Jam"} />
         <p key="item-2" className={textClassName}>
           :
         </p>
-        <DateTimeDisplay value={0} type={"Menit"} />
+        <DateTimeDisplay key={`Menit${0}`} value={0} type={"Menit"} />
         <p key="item-3" className={textClassName}>
           :
         </p>
-        <DateTimeDisplay value={0} type={"Detik"} />
+        <DateTimeDisplay key={`Detik${0}`} value={0} type={"Detik"} />
       </AnimatePresence>
     </div>
   );
@@ -87,12 +87,12 @@ export const DateTimeDisplay = ({
     <div className="relative">
       <motion.div
         className="flex w-16 flex-col items-center justify-center md:mx-6"
-        initial={{ y: -150, opacity: 0 }}
+        initial={{ y: -32, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 75, opacity: 0, position: "absolute" }}
         transition={{
           type: "spring",
-          damping: 8,
+          damping: 10,
           stiffness: 100,
           mass: 1,
         }}
@@ -109,11 +109,16 @@ export const DateTimeDisplay = ({
 };
 
 export const useCountdown = (targetDate: string | number | Date) => {
-  const countDownDate = new Date(targetDate).getTime();
-
+  const [countDownDate, setCountDownDate] = useState(
+    new Date(targetDate).getTime(),
+  );
   const [countDown, setCountDown] = useState(
     countDownDate - new Date().getTime(),
   );
+
+  useEffect(() => {
+    setCountDownDate(new Date(targetDate).getTime());
+  }, [targetDate]);
 
   useEffect(() => {
     const interval = setInterval(() => {
