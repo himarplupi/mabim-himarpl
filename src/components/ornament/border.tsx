@@ -3,30 +3,35 @@ import { cn } from "@/lib/utils";
 interface BorderProps {
   className?: string;
   pathClassName?: string;
-  offset?: string;
+  topLeftClassName?: string;
+  topRightClassName?: string;
+  bottomLeftClassName?: string;
+  bottomRightClassName?: string;
 }
 
 export function BorderCorner({
-  className,
   pathClassName,
-  offset = "2",
+  topLeftClassName,
+  topRightClassName,
+  bottomLeftClassName,
+  bottomRightClassName,
 }: BorderProps) {
   return (
     <>
       <TopLeftCorner
-        className={cn(`absolute left-${offset} top-${offset}`, className)}
+        className={cn(`absolute left-2 top-2`, topLeftClassName)}
         pathClassName={pathClassName}
       />
       <TopRightCorner
-        className={cn(`absolute right-${offset} top-${offset}`, className)}
+        className={cn(`absolute right-2 top-2`, topRightClassName)}
         pathClassName={pathClassName}
       />
       <BottomLeftCorner
-        className={cn(`absolute bottom-${offset} left-${offset}`, className)}
+        className={cn(`absolute bottom-2 left-2`, bottomLeftClassName)}
         pathClassName={pathClassName}
       />
       <BottomRightCorner
-        className={cn(`absolute bottom-${offset} right-${offset}`, className)}
+        className={cn(`absolute bottom-2 right-2`, bottomRightClassName)}
         pathClassName={pathClassName}
       />
     </>

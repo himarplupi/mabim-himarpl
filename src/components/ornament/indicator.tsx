@@ -17,8 +17,8 @@ export function AbilityIndicator({ className, pathClassName }: IndicatorProps) {
         className={cn("fill-foreground", pathClassName)}
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M0 15L15 0L30 15L15 30L0 15ZM5.35648 15L14.9996 5.35692L24.6426 15L14.9996 24.6431L5.35648 15Z"
         className={cn("fill-foreground", pathClassName)}
       />
