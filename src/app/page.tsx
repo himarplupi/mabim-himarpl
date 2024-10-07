@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Vector1 from "@/assets/vector-1.svg";
+import { FAQAccordions } from "@/components/common/faq-accordions";
 import { BorderCorner } from "@/components/ornament/border";
 import { Hieroglyph } from "@/components/ornament/hieroglyph";
 import { Separator } from "@/components/ornament/separator";
@@ -73,15 +74,12 @@ export default function HomePage() {
       <div className="absolute left-0 right-0 top-[825px] z-[10] opacity-75">
         <Hieroglyph length={32} className="text-primary-950" />
       </div>
-      <div className="absolute left-0 right-0 top-[850px] z-[10] opacity-75">
-        <Hieroglyph length={32} className="text-primary-900" />
-      </div>
 
       <Wave className="absolute -left-32 bottom-64 opacity-50" />
 
       <Wave className="absolute -bottom-64 -left-32 rotate-180 opacity-50" />
 
-      <div className="bg-primary-700/95 pt-64">
+      <div className="bg-primary-700/95 pt-96">
         <section className="relative z-10 space-y-4 rounded-md bg-neutral-50 px-6 py-8 text-center">
           <BorderCorner />
 
@@ -212,6 +210,16 @@ export default function HomePage() {
               </div>
             </div> */}
           </ul>
+        </section>
+      </div>
+
+      <div className="bg-primary-700/95 pt-32">
+        <section className="relative z-10 mb-64 space-y-4 px-3">
+          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+            FAQ
+          </h2>
+
+          <FAQAccordions />
         </section>
       </div>
     </main>
