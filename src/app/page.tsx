@@ -112,16 +112,20 @@ export default function HomePage() {
 
       {/* New Timeline Section */}
       <div className="bg-primary-700/95 pt-32">
-        <section className="relative z-10">
-          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+        <section className="relative z-10 rounded-md bg-neutral-50">
+          <BorderCorner />
+          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
             TIMELINE
           </h2>
-          <ul className="text-neutral-50">
-            <li>20 Desember 2029 - Day 1</li>
-            <li>30 Desember 2029 - Day 2</li>
-            <li>3 Januari 2030 - Day 3</li>
-            <li>15 Januari 2030 - Day 4</li>
-          </ul>
+          <div className="space-z-10">
+            <ul className="text-center font-bonobo text-neutral-950">
+              <li>19 Oktober 2024 - Technical Meeting</li>
+              <li>26 Oktober 2024 - Day 1</li>
+              <li>2 November 2024 - Day 2</li>
+              <li>3 November 2024 - Day 3</li>
+              <li>9 November 2024 - Day 4</li>
+            </ul>
+          </div>
         </section>
       </div>
     </main>
