@@ -104,7 +104,7 @@ export default function HomePage() {
       </div>
 
       {/* Tabs Component */}
-      <div className="bg-primary-600/95 pt-32">
+      <div className="bg-primary-700/95 pt-32">
         <CountdownTabs tabs={tabData} />
       </div>
 

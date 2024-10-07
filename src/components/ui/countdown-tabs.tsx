@@ -28,61 +28,11 @@ interface TabsProps {
   tabs: TabProps[];
 }
 
-function CountdownTimer({ targetDate }: { targetDate: Date }) {
-  const [days, hours, minutes, seconds] = useCountdown(targetDate);
-  const [isExpired, setIsExpired] = useState(false);
-
-  useEffect(() => {
-    if (
-      typeof days === "undefined" ||
-      typeof hours === "undefined" ||
-      typeof minutes === "undefined" ||
-      typeof seconds === "undefined"
-    ) {
-      return;
-    }
-
-    const countdown =
-      days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60 + seconds;
-
-    if (countdown <= 0) {
-      setIsExpired(true);
-    } else {
-      setIsExpired(false);
-    }
-  }, [days, seconds, minutes, hours]);
-
-  return (
-    <motion.div
-      initial={{ scale: 0.5 }}
-      whileInView={{ scale: 1 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{
-        type: "spring",
-        damping: 20,
-        stiffness: 200,
-      }}
-      className="flex items-center justify-center font-zelda text-[#E6E7CB]"
-    >
-      {isExpired ? (
-        <ExpiredNotice />
-      ) : (
-        <ShowCounter
-          days={days}
-          hours={hours}
-          minutes={minutes}
-          seconds={seconds}
-        />
-      )}
-    </motion.div>
-  );
-}
-
 export function CountdownTabs({ tabs }: TabsProps) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="relative z-10 flex flex-col items-center space-y-4 bg-primary-600 px-3 py-6">
+    <div className="relative z-10 flex flex-col items-center space-y-4 px-3 py-6">
       <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
         COUNTDOWN
       </h2>
@@ -150,7 +100,7 @@ export function CountdownTabs({ tabs }: TabsProps) {
         </div>
       </div>
 
-      <div className="relative mt-4 rounded-md border border-gray-300 px-6 pb-2 pt-4">
+      <div className="relative mt-4 rounded-md border border-gray-300 bg-primary-600 px-6 pb-2 pt-4">
         <TopLeftCorner
           className="absolute left-1 top-1 scale-75"
           pathClassName="fill-neutral-50 opacity-50"
@@ -170,5 +120,55 @@ export function CountdownTabs({ tabs }: TabsProps) {
         <CountdownTimer targetDate={new Date(tabs[activeTab]?.date ?? "")} />
       </div>
     </div>
+  );
+}
+
+function CountdownTimer({ targetDate }: { targetDate: Date }) {
+  const [days, hours, minutes, seconds] = useCountdown(targetDate);
+  const [isExpired, setIsExpired] = useState(false);
+
+  useEffect(() => {
+    if (
+      typeof days === "undefined" ||
+      typeof hours === "undefined" ||
+      typeof minutes === "undefined" ||
+      typeof seconds === "undefined"
+    ) {
+      return;
+    }
+
+    const countdown =
+      days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60 + seconds;
+
+    if (countdown <= 0) {
+      setIsExpired(true);
+    } else {
+      setIsExpired(false);
+    }
+  }, [days, seconds, minutes, hours]);
+
+  return (
+    <motion.div
+      initial={{ scale: 0.5 }}
+      whileInView={{ scale: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{
+        type: "spring",
+        damping: 20,
+        stiffness: 200,
+      }}
+      className="flex items-center justify-center font-zelda text-neutral-50"
+    >
+      {isExpired ? (
+        <ExpiredNotice />
+      ) : (
+        <ShowCounter
+          days={days}
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+        />
+      )}
+    </motion.div>
   );
 }
