@@ -75,9 +75,9 @@ export default function HomePage() {
         <Hieroglyph length={32} className="text-primary-950" />
       </div>
 
-      <Wave className="absolute -left-32 bottom-64 opacity-50" />
+      <Wave className="absolute -left-32 top-10 opacity-50" />
 
-      <Wave className="absolute -bottom-64 -left-32 rotate-180 opacity-50" />
+      <Wave className="absolute -left-32 top-[700px] rotate-180 opacity-50" />
 
       <div className="bg-primary-700/95 pt-96">
         <section className="relative z-10 space-y-4 rounded-md bg-neutral-50 px-6 py-8 text-center">
@@ -213,7 +213,7 @@ export default function HomePage() {
         </section>
       </div>
 
-      <div className="bg-primary-700/95 pt-32">
+      <div className="bg-primary-700/95 py-32">
         <section className="relative z-10 mb-64 space-y-4 px-3">
           <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
             FAQ
