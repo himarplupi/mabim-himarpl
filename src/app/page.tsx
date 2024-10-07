@@ -10,6 +10,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { CountdownTabs } from "@/components/ui/countdown-tabs";
 import { Input } from "@/components/ui/input";
+import { Marquee } from "@/components/ui/marquee";
 import { SparklesText } from "@/components/ui/sparkles-text";
 
 const tabData = [
@@ -19,6 +20,40 @@ const tabData = [
   { label: "Day-3", date: "2024-11-03" },
   { label: "Day-4", date: "2024-11-09" },
 ];
+
+const sponsorMediaPartners = [
+  {
+    name: "PT. ABC",
+    logo: "https://placehold.co/320x100/webp",
+  },
+  {
+    name: "PT. DEF",
+    logo: "https://placehold.co/320x100/webp",
+  },
+  {
+    name: "PT. GHI",
+    logo: "https://placehold.co/320x100/webp",
+  },
+  {
+    name: "PT. JKL",
+    logo: "https://placehold.co/320x100/webp",
+  },
+  {
+    name: "PT. MNO",
+    logo: "https://placehold.co/320x100/webp",
+  },
+];
+
+const firstRow = sponsorMediaPartners.slice(0, sponsorMediaPartners.length / 2);
+const secondRow = sponsorMediaPartners.slice(sponsorMediaPartners.length / 2);
+
+const SponsorMediaPartnerCard = ({ logo }: { logo: string }) => {
+  return (
+    <figure className="relative aspect-video h-32 w-64 cursor-pointer overflow-hidden rounded-xl border p-4">
+      <Image fill alt="" src={logo} />
+    </figure>
+  );
+};
 
 export default function HomePage() {
   return (
@@ -104,12 +139,12 @@ export default function HomePage() {
       </div>
 
       {/* Tabs Component */}
-      <div className="bg-primary-700/95 pt-32">
+      <div className="bg-primary-700/95 pt-64">
         <CountdownTabs tabs={tabData} />
       </div>
 
       {/* New Timeline Section */}
-      <div className="bg-primary-700/95 pt-32">
+      <div className="bg-primary-700/95 pt-64">
         <section className="relative z-10 rounded-md bg-neutral-50">
           <BorderCorner />
           <h2 className="p-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
@@ -213,13 +248,38 @@ export default function HomePage() {
         </section>
       </div>
 
-      <div className="bg-primary-700/95 py-32">
-        <section className="relative z-10 mb-64 space-y-4 px-3">
+      <div className="bg-primary-700/95 pt-64">
+        <section className="relative z-10 space-y-4 px-3">
           <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
             FAQ
           </h2>
 
           <FAQAccordions />
+        </section>
+      </div>
+
+      <div className="bg-primary-700/95 pt-64">
+        <section className="relative z-10 space-y-4 px-3">
+          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+            SPONSOR & MEDIA PARTNER
+          </h2>
+
+          <Marquee pauseOnHover className="[--duration:10s]">
+            {firstRow.map((sponsorMediaPartner) => (
+              <SponsorMediaPartnerCard
+                key={sponsorMediaPartner.name}
+                {...sponsorMediaPartner}
+              />
+            ))}
+          </Marquee>
+          <Marquee reverse pauseOnHover className="[--duration:10s]">
+            {secondRow.map((sponsorMediaPartner) => (
+              <SponsorMediaPartnerCard
+                key={sponsorMediaPartner.name}
+                {...sponsorMediaPartner}
+              />
+            ))}
+          </Marquee>
         </section>
       </div>
     </main>
