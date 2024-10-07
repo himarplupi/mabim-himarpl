@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import Vector1 from "@/assets/vector-1.svg";
+import { FAQAccordions } from "@/components/common/faq-accordions";
 import { BorderCorner } from "@/components/ornament/border";
 import { Hieroglyph } from "@/components/ornament/hieroglyph";
 import { Separator } from "@/components/ornament/separator";
@@ -119,6 +120,16 @@ export default function HomePage() {
             <li>3 Januari 2030 - Day 3</li>
             <li>15 Januari 2030 - Day 4</li>
           </ul>
+        </section>
+      </div>
+
+      <div className="bg-primary-700/95 pt-32">
+        <section className="relative z-10 mb-64 space-y-4 px-3">
+          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+            FAQ
+          </h2>
+
+          <FAQAccordions />
         </section>
       </div>
     </main>
