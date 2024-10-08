@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useLenis } from "lenis/react";
 
+import {
+  type GroupMabim,
+  groupMabim,
+  type Mentee,
+} from "@/components/common/group-mabim";
 import { BorderCorner } from "@/components/ornament/border";
+import { Separator } from "@/components/ornament/separator";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
@@ -15,27 +22,35 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-
-import { type GroupMabim, groupMabim, type Mentee } from "./group-mabim";
+import { Share1Icon } from "@radix-ui/react-icons";
 
 export function KelompokSection() {
-  const router = useRouter();
+  const lenis = useLenis();
   const [name, setName] = useState("");
   const [mentee, setMentee] = useState<Mentee | undefined>();
   const [group, setGroup] = useState<GroupMabim | undefined>();
   const [isNotFound, setIsNotFound] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (isOpen || isNotFound) {
+      lenis?.stop();
+    } else {
+      lenis?.start();
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen, isNotFound]);
+
   const handleSearch = () => {
+    const cleanName = name.toLowerCase().trim();
     const currentGroup = groupMabim.find((group) =>
-      group.mentees.some(
-        (mentee) => mentee.name.toLowerCase() === name.toLowerCase(),
-      ),
+      group.mentees.some((mentee) => mentee.name.toLowerCase() === cleanName),
     );
 
     if (currentGroup) {
       const currentMentee = currentGroup.mentees.find(
-        (mentee) => mentee.name.toLowerCase() === name.toLowerCase(),
+        (mentee) => mentee.name.toLowerCase() === cleanName,
       );
       setIsNotFound(false);
       setGroup(currentGroup);
@@ -92,16 +107,19 @@ export function KelompokSection() {
       {/* Not Found Dialog */}
       <Dialog open={isNotFound} onOpenChange={setIsNotFound}>
         <DialogContent className="bg-neutral-900 font-bonobo text-neutral-50">
-          <DialogTitle hidden>Nama Tidak Ditemukan</DialogTitle>
+          <DialogTitle hidden>Nama tidak ditemukan</DialogTitle>
           <DialogDescription hidden>
             Nama {name} tidak ditemukan.
           </DialogDescription>
           <div className="flex flex-col gap-4 pt-2">
-            <p className="font-bonobo leading-5">
-              {`Nama '${name}' tidak ditemukan. Silakan coba lagi dengan menuliskan
+            <Separator pathClassName="fill-neutral-50/20" />
+            <p className="font-bonobo text-lg font-semibold leading-5 text-neutral-100">{`Nama '${name}' tidak ditemukan`}</p>
+            <p className="font-bonobo leading-5 text-neutral-300">
+              {`Silakan coba lagi dengan menuliskan
               nama lengkap, jika masih tidak ditemukan, harap hubungi kang bagas
               (advokastra)`}
             </p>
+            <Separator pathClassName="fill-neutral-50/20" />
           </div>
           <DialogFooter>
             <Link
@@ -117,27 +135,52 @@ export function KelompokSection() {
 
       {/* Found Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="bg-neutral-900 font-bonobo text-neutral-50">
+        <DialogContent className="overflow-hidden bg-neutral-900 font-bonobo text-neutral-50">
           <DialogTitle hidden>Kelompok Ditemukan</DialogTitle>
           <DialogDescription hidden>
             Berikut ini adalah kelompok yang kamu cari
           </DialogDescription>
 
-          <div className="flex flex-col gap-4 pt-2">
-            <h3 className="text-center font-rock-n-roll-one text-2xl font-normal leading-tight tracking-wider">
-              {`Kelompok ${group?.id}`}
-            </h3>
-            <h4 className="text-center font-bonobo capitalize">
-              {group?.name}
+          <div className="flex min-h-[350px] flex-col gap-y-2 pt-2">
+            <div className="space-y-1">
+              <h3 className="text-center font-rock-n-roll-one text-2xl font-normal leading-tight tracking-wider">
+                {`Kelompok ${group?.id}`}
+              </h3>
+
+              <h4 className="text-center font-bonobo text-xl capitalize">
+                {group?.name}
+              </h4>
+            </div>
+
+            <h4 className="text-center font-bonobo text-lg capitalize">
+              {mentee?.id} - {mentee?.name}
             </h4>
-            <div className="flex flex-col gap-2">
+
+            {/* <div className="flex flex-col gap-2">
               <p className="text-center font-bonobo capitalize leading-5">
                 {group?.mentor.name.toLowerCase()}
               </p>
-            </div>
+            </div> */}
+          </div>
+
+          <div className="absolute -bottom-10 left-0 right-0 -z-10 flex justify-center">
+            {group?.mentor?.image && (
+              <Image
+                src={group?.mentor?.image}
+                alt={group?.mentor?.name}
+                width={300}
+              />
+            )}
           </div>
 
           <DialogFooter>
+            <Button
+              className={cn("text-neutral-950")}
+              variant="outline"
+              size="icon"
+            >
+              <Share1Icon />
+            </Button>
             <Link
               href={`https://wa.me/${group?.mentor.phone}`}
               target="_blank"
