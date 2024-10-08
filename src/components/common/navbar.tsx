@@ -46,12 +46,12 @@ export function Navbar() {
     <div className="fixed left-0 right-0 top-0 z-50 mx-auto">
       <nav className="container flex items-center justify-between bg-primary-950">
         <div className="flex items-center gap-x-4">
-          <div className="relative h-12 w-12">
+          <div className="relative h-12 w-14">
             <Image
               // eslint-disable-next-line
               src={LogoMabim}
               alt="Logo Mabim"
-              className="absolute -bottom-2 left-0 h-12 w-12"
+              className="absolute -bottom-3 left-0 h-14 w-14"
             />
           </div>
           <h3 className="font-zelda text-2xl tracking-tight text-primary-50">
