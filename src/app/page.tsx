@@ -139,7 +139,7 @@ export default function HomePage() {
           <ul className="font-bonobo text-neutral-950">
             <div className="p-10">
               <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
                 <div className="flex flex-col text-left font-bold">
                   <li className="">19 Oktober 2024</li>
                   <li className="">Technical Meeting</li>
@@ -147,19 +147,14 @@ export default function HomePage() {
               </div>
               <div className="flex">
                 <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="h-auto w-3 border border-neutral-950 bg-neutral-400"></div>
+                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
                 </div>
                 <div className="">
-                  <li className="ml-10 text-left text-sm">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Temporibus dolorem esse optio minima eius, enim accusamus at
-                    aliquam neque hic nam id molestiae ea iure laborum similique
-                    dolor vitae eligendi!
-                  </li>
+                  <li className="ml-10 w-64 text-left text-sm"></li>
                 </div>
               </div>
               <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
                 <div className="flex flex-col text-left font-bold">
                   <li className="text-left">26 Oktober 2024</li>
                   <li className="text-left">Day 1</li>
@@ -167,19 +162,14 @@ export default function HomePage() {
               </div>
               <div className="flex">
                 <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="h-auto w-3 border border-neutral-950 bg-neutral-400"></div>
+                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
                 </div>
                 <div className="">
-                  <li className="ml-10 text-left text-sm">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Temporibus dolorem esse optio minima eius, enim accusamus at
-                    aliquam neque hic nam id molestiae ea iure laborum similique
-                    dolor vitae eligendi!
-                  </li>
+                  <li className="ml-10 w-64 text-left text-sm"></li>
                 </div>
               </div>
               <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
                 <div className="flex flex-col text-left font-bold">
                   <li className="text-left">2 November 2024</li>
                   <li className="text-left">Day 2</li>
@@ -187,19 +177,14 @@ export default function HomePage() {
               </div>
               <div className="flex">
                 <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="h-auto w-3 border border-neutral-950 bg-neutral-400"></div>
+                  <div className="m-4 h-auto w-2 border bg-neutral-400"></div>
                 </div>
                 <div className="">
-                  <li className="ml-10 text-left text-sm">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Temporibus dolorem esse optio minima eius, enim accusamus at
-                    aliquam neque hic nam id molestiae ea iure laborum similique
-                    dolor vitae eligendi!
-                  </li>
+                  <li className="ml-10 w-64 text-left text-sm"></li>
                 </div>
               </div>
               <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
                 <div className="flex flex-col text-left font-bold">
                   <li className="text-left">3 November 2024</li>
                   <li className="text-left">Day 3</li>
@@ -207,19 +192,14 @@ export default function HomePage() {
               </div>
               <div className="flex">
                 <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="h-auto w-3 border border-neutral-950 bg-neutral-400"></div>
+                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
                 </div>
                 <div className="">
-                  <li className="ml-10 text-left text-sm">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Temporibus dolorem esse optio minima eius, enim accusamus at
-                    aliquam neque hic nam id molestiae ea iure laborum similique
-                    dolor vitae eligendi!
-                  </li>
+                  <li className="ml-10 w-64 text-left text-sm"></li>
                 </div>
               </div>
               <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
                 <div className="flex flex-col text-left font-bold">
                   <li className="text-left">9 November 2024</li>
                   <li className="text-left">Day 4</li>
@@ -228,19 +208,13 @@ export default function HomePage() {
               <div className="flex">
                 <div className="flex h-auto w-56 justify-center border border-white"></div>
                 <div className="">
-                  <li className="ml-10 text-left text-sm">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Temporibus dolorem esse optio minima eius, enim accusamus at
-                    aliquam neque hic nam id molestiae ea iure laborum similique
-                    dolor vitae eligendi!
-                  </li>
+                  <li className="ml-10 w-64 text-left text-sm"></li>
                 </div>
               </div>
             </div>
           </ul>
         </section>
       </div>
-
       <div className="bg-primary-700/95 pt-64">
         <section id="faq" className="relative z-10 space-y-4 px-3">
           <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
