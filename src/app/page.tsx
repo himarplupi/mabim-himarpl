@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Vector1 from "@/assets/vector-1.svg";
 import { FAQAccordions } from "@/components/common/faq-accordions";
+import { Footer } from "@/components/common/footer";
 import { BorderCorner } from "@/components/ornament/border";
 import { Hieroglyph } from "@/components/ornament/hieroglyph";
 import { Separator } from "@/components/ornament/separator";
@@ -281,6 +282,10 @@ export default function HomePage() {
             ))}
           </Marquee>
         </section>
+      </div>
+
+      <div className="bg-primary-700/95 pt-64">
+        <Footer />
       </div>
     </main>
   );

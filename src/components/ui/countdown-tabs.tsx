@@ -33,7 +33,7 @@ export function CountdownTabs({ tabs }: TabsProps) {
 
   return (
     <div className="relative z-10 flex flex-col items-center space-y-4 px-3 py-6">
-      <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+      <h2 className="pb-4 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
         COUNTDOWN
       </h2>
 
@@ -100,7 +100,7 @@ export function CountdownTabs({ tabs }: TabsProps) {
         </div>
       </div>
 
-      <div className="relative mt-4 rounded-md border border-gray-300 bg-primary-600 px-6 pb-2 pt-4">
+      <div className="relative mt-4 w-full rounded-md border border-gray-300 bg-primary-600 px-6 pb-2 pt-4">
         <TopLeftCorner
           className="absolute left-1 top-1 scale-75"
           pathClassName="fill-neutral-50 opacity-50"
@@ -119,6 +119,10 @@ export function CountdownTabs({ tabs }: TabsProps) {
         />
         <CountdownTimer targetDate={new Date(tabs[activeTab]?.date ?? "")} />
       </div>
+
+      <p className="w-full text-right font-bonobo text-sm text-neutral-300">
+        *Geser tab untuk melihat hari lainnya
+      </p>
     </div>
   );
 }
