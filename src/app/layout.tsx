@@ -2,6 +2,7 @@ import { type Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 
 import { ReactLenis } from "@/components/common/react-lenis";
+import { env } from "@/env";
 
 import {
   fontBonobo,
@@ -27,7 +28,15 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${fontBonobo.variable} ${fontZelda.variable} ${fontRockNRollOne.variable} ${fontSheikahComplete.variable}`}
     >
       <body>
-        <ReactLenis>{children}</ReactLenis>
+        {env.NODE_ENV === "development" ? (
+          <ReactLenis>{children}</ReactLenis>
+        ) : (
+          <main className="flex h-screen items-center justify-center">
+            <h1 className="text-center font-bonobo text-2xl font-semibold">
+              On Development
+            </h1>
+          </main>
+        )}
       </body>
     </html>
   );
