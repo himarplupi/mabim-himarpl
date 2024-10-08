@@ -130,12 +130,21 @@ export function KelompokSection() {
               {group?.name}
             </h4>
             <div className="flex flex-col gap-2">
-              <p className="font-bonobo leading-5">
-                <span className="font-semibold">Mentor:</span>{" "}
-                {group?.mentor.name}
+              <p className="text-center font-bonobo capitalize leading-5">
+                {group?.mentor.name.toLowerCase()}
               </p>
             </div>
           </div>
+
+          <DialogFooter>
+            <Link
+              href={`https://wa.me/${group?.mentor.phone}`}
+              target="_blank"
+              className={cn(buttonVariants())}
+            >
+              Hubungi Mentor
+            </Link>
+          </DialogFooter>
         </DialogContent>
       </Dialog>
     </section>
