@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useLenis } from "lenis/react";
 
 const navLinks = [
   {
@@ -29,7 +30,18 @@ const navLinks = [
   },
 ];
 
+const isExternalLink = (href: string) => href.includes("http");
+
 export function Footer() {
+  const lenis = useLenis();
+
+  const handleLinkClick = (href: string, e: React.MouseEvent) => {
+    if (!isExternalLink(href)) {
+      e.preventDefault();
+      lenis?.scrollTo(href, { offset: -64 });
+    }
+  };
+
   return (
     <footer className="container relative z-10 flex flex-col gap-4 bg-primary-800 py-8">
       <p className="font-bonobo text-lg text-neutral-200">
@@ -45,6 +57,8 @@ export function Footer() {
             <Link
               className="inline-block font-bonobo text-lg leading-5 text-primary-200 hover:underline"
               href={link.href}
+              target={isExternalLink(link.href) ? "_blank" : undefined}
+              onClick={(e) => handleLinkClick(link.href, e)}
             >
               {link.name}
             </Link>
