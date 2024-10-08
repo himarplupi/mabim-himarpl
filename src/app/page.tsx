@@ -4,6 +4,7 @@ import Vector1 from "@/assets/vector-1.svg";
 import { FAQAccordions } from "@/components/common/faq-accordions";
 import { Footer } from "@/components/common/footer";
 import { GlobalFooter } from "@/components/common/global-footer";
+import { KelompokSection } from "@/components/common/kelompok-section";
 import { BorderCorner } from "@/components/ornament/border";
 import { Hieroglyph } from "@/components/ornament/hieroglyph";
 import { Separator } from "@/components/ornament/separator";
@@ -11,7 +12,6 @@ import { Wave } from "@/components/ornament/wave";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { CountdownTabs } from "@/components/ui/countdown-tabs";
-import { Input } from "@/components/ui/input";
 import { Marquee } from "@/components/ui/marquee";
 import { SparklesText } from "@/components/ui/sparkles-text";
 
@@ -118,30 +118,7 @@ export default function HomePage() {
       <Wave className="absolute -left-32 top-[700px] rotate-180 opacity-50" />
 
       <div className="bg-primary-700/95 pt-96">
-        <section
-          id="kelompok"
-          className="relative z-10 space-y-4 rounded-md bg-neutral-50 px-6 py-8 text-center"
-        >
-          <BorderCorner />
-
-          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
-            TEMUKAN KELOMPOK MABIM-KU
-          </h2>
-
-          <p className="text-center font-bonobo text-neutral-950">
-            Cari kelompok dengan menuliskan nama lengkap kamu!
-          </p>
-
-          <div className="rounded-md bg-neutral-900 p-1">
-            <Input
-              type="text"
-              placeholder="Ketik disini..."
-              className="border-neutral-50/40 bg-neutral-900 text-neutral-200"
-            />
-          </div>
-
-          <Button className="w-full">CARI KELOMPOK</Button>
-        </section>
+        <KelompokSection />
       </div>
 
       {/* Tabs Component */}
