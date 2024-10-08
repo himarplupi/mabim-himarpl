@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion"; // Import motion from Framer Motion
 import { useLenis } from "lenis/react";
 
 import LogoMabim from "@/assets/logo-mabim.svg";
@@ -43,7 +44,18 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed left-0 right-0 top-0 z-50 md:left-2 md:right-2 md:top-2">
+    <motion.div // Wrap the nav div with motion.div
+      className="fixed left-0 right-0 top-0 z-50 md:left-2 md:right-2 md:top-2"
+      initial={{ y: -100 }} // Start position (off-screen)
+      animate={{ y: 0 }} // End position (on-screen)
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+        mass: 1,
+        delay: 0.5,
+      }} // Animation duration
+    >
       <nav className="container flex items-center justify-between bg-primary-950 md:rounded-md">
         <div className="flex items-center gap-x-4 md:gap-x-6 md:py-2">
           <div className="relative h-12 w-14">
@@ -114,6 +126,6 @@ export function Navbar() {
           </SheetContent>
         </Sheet>
       </nav>
-    </div>
+    </motion.div>
   );
 }

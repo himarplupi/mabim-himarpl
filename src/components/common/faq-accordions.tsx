@@ -13,6 +13,8 @@ import { AbilityIndicator } from "@/components/ornament/indicator";
 import { cn } from "@/lib/utils";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
+import { BlurFade } from "../ui/blur-fade";
+
 const faqs = [
   {
     id: "item-1",
@@ -64,54 +66,56 @@ export function FAQAccordions() {
       collapsible
       className="w-full font-bonobo"
     >
-      {faqs.map((faq) => (
-        <AccordionPrimitive.AccordionItem key={faq.id} value={faq.id}>
-          <AccordionPrimitive.AccordionTrigger className="relative flex w-full items-center gap-3 bg-neutral-900/80 px-5 py-3">
-            {activeIndex === faq.id && (
-              <motion.div
-                className="absolute left-0 top-0 h-full w-full border border-neutral-100"
-                initial={{ opacity: 0, scale: 0.95 }} // Initial state
-                animate={{ opacity: 1, scale: 1 }} // Animate to full opacity and scale
-                exit={{ opacity: 0, scale: 0.95 }} // Animate back to initial state on exit
-                transition={{ duration: 0.3 }} // Duration of the animation
-              >
-                <TopLeftCorner
-                  pathClassName="fill-neutral-100"
-                  className="absolute -left-2 -top-2 scale-50"
-                />
-                <TopRightCorner
-                  pathClassName="fill-neutral-100"
-                  className="absolute -right-2 -top-2 scale-50"
-                />
-                <BottomLeftCorner
-                  pathClassName="fill-neutral-100"
-                  className="absolute -bottom-2 -left-2 scale-50"
-                />
-                <BottomRightCorner
-                  pathClassName="fill-neutral-100"
-                  className="absolute -bottom-2 -right-2 scale-50"
-                />
-              </motion.div>
-            )}
-            <AbilityIndicator
-              className="h-5 w-5"
-              pathClassName={cn(
-                "transition-all duration-300 ease-in-out fill-neutral-400",
-                activeIndex === faq.id && "fill-neutral-50",
+      {faqs.map((faq, index) => (
+        <BlurFade key={faq.id} inView delay={0.25 * (index * 2 + 4)}>
+          <AccordionPrimitive.AccordionItem value={faq.id}>
+            <AccordionPrimitive.AccordionTrigger className="relative flex w-full items-center gap-3 bg-neutral-900/80 px-5 py-3">
+              {activeIndex === faq.id && (
+                <motion.div
+                  className="absolute left-0 top-0 h-full w-full border border-neutral-100"
+                  initial={{ opacity: 0, scale: 0.95 }} // Initial state
+                  animate={{ opacity: 1, scale: 1 }} // Animate to full opacity and scale
+                  exit={{ opacity: 0, scale: 0.95 }} // Animate back to initial state on exit
+                  transition={{ duration: 0.3 }} // Duration of the animation
+                >
+                  <TopLeftCorner
+                    pathClassName="fill-neutral-100"
+                    className="absolute -left-2 -top-2 scale-50"
+                  />
+                  <TopRightCorner
+                    pathClassName="fill-neutral-100"
+                    className="absolute -right-2 -top-2 scale-50"
+                  />
+                  <BottomLeftCorner
+                    pathClassName="fill-neutral-100"
+                    className="absolute -bottom-2 -left-2 scale-50"
+                  />
+                  <BottomRightCorner
+                    pathClassName="fill-neutral-100"
+                    className="absolute -bottom-2 -right-2 scale-50"
+                  />
+                </motion.div>
               )}
-            />
-            <p className="text-left font-semibold text-neutral-50">
-              {faq.question}
-            </p>
-          </AccordionPrimitive.AccordionTrigger>
-          <AccordionPrimitive.AccordionContent className="overflow-hidden py-2 text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-            <div className="bg-neutral-900/80 p-1">
-              <div className="border border-primary-50/25 p-3 text-neutral-50">
-                {faq.answer}
+              <AbilityIndicator
+                className="h-5 w-5"
+                pathClassName={cn(
+                  "transition-all duration-300 ease-in-out fill-neutral-400",
+                  activeIndex === faq.id && "fill-neutral-50",
+                )}
+              />
+              <p className="text-left font-semibold text-neutral-50">
+                {faq.question}
+              </p>
+            </AccordionPrimitive.AccordionTrigger>
+            <AccordionPrimitive.AccordionContent className="overflow-hidden py-2 text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+              <div className="bg-neutral-900/80 p-1">
+                <div className="border border-primary-50/25 p-3 text-neutral-50">
+                  {faq.answer}
+                </div>
               </div>
-            </div>
-          </AccordionPrimitive.AccordionContent>
-        </AccordionPrimitive.AccordionItem>
+            </AccordionPrimitive.AccordionContent>
+          </AccordionPrimitive.AccordionItem>
+        </BlurFade>
       ))}
     </AccordionPrimitive.Root>
   );

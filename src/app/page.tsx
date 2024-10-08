@@ -85,14 +85,14 @@ export default function HomePage() {
             />
           </BlurFade>
 
-          <BlurFade delay={0.25 * 3} inView>
+          <BlurFade delay={0.25 * 4} inView>
             <p className="max-w-[640px] text-center font-bonobo text-neutral-50 md:text-lg">
               {`"Membangun Kepemimpinan Diri di Era Revolusi Industri: Transformasi Diri untuk Masa Depan Digital"`}
             </p>
           </BlurFade>
 
           <BlurFade
-            delay={0.25 * 4}
+            delay={0.25 * 6}
             inView
             className="mt-4 flex w-full flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6"
           >
@@ -122,7 +122,9 @@ export default function HomePage() {
       <Wave className="absolute -left-8 top-[700px] rotate-180 opacity-50 sm:left-0 sm:w-full md:top-[700px]" />
 
       <div className="bg-primary-700/95 pt-96">
-        <KelompokSection />
+        <BlurFade inView delay={0.25 * 2}>
+          <KelompokSection />
+        </BlurFade>
       </div>
 
       {/* Tabs Component */}
@@ -221,9 +223,11 @@ export default function HomePage() {
       </div>
       <div className="bg-primary-700/95 pt-64">
         <section id="faq" className="relative z-10 space-y-4 px-3">
-          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
-            FAQ
-          </h2>
+          <BlurFade inView delay={0.25 * 2}>
+            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+              FAQ
+            </h2>
+          </BlurFade>
 
           <FAQAccordions />
         </section>
@@ -231,26 +235,32 @@ export default function HomePage() {
 
       <div className="bg-primary-700/95 pt-64">
         <section className="relative z-10 space-y-4 px-3">
-          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
-            SPONSOR & MEDIA PARTNER
-          </h2>
+          <BlurFade inView delay={0.25 * 2}>
+            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+              SPONSOR & MEDIA PARTNER
+            </h2>
+          </BlurFade>
 
-          <Marquee pauseOnHover className="[--duration:10s]">
-            {firstRow.map((sponsorMediaPartner) => (
-              <SponsorMediaPartnerCard
-                key={sponsorMediaPartner.name}
-                {...sponsorMediaPartner}
-              />
-            ))}
-          </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:10s]">
-            {secondRow.map((sponsorMediaPartner) => (
-              <SponsorMediaPartnerCard
-                key={sponsorMediaPartner.name}
-                {...sponsorMediaPartner}
-              />
-            ))}
-          </Marquee>
+          <BlurFade inView delay={0.25 * 4}>
+            <Marquee pauseOnHover className="[--duration:10s]">
+              {firstRow.map((sponsorMediaPartner) => (
+                <SponsorMediaPartnerCard
+                  key={sponsorMediaPartner.name}
+                  {...sponsorMediaPartner}
+                />
+              ))}
+            </Marquee>
+          </BlurFade>
+          <BlurFade inView delay={0.25 * 6}>
+            <Marquee reverse pauseOnHover className="[--duration:10s]">
+              {secondRow.map((sponsorMediaPartner) => (
+                <SponsorMediaPartnerCard
+                  key={sponsorMediaPartner.name}
+                  {...sponsorMediaPartner}
+                />
+              ))}
+            </Marquee>
+          </BlurFade>
         </section>
       </div>
 
