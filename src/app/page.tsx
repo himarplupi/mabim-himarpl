@@ -128,28 +128,29 @@ export default function HomePage() {
         </BlurFade>
       </div>
 
-      {/* Tabs Component */}
       <div className="bg-primary-700/95 pt-64">
         <CountdownTabs tabs={tabData} />
       </div>
 
-      {/* New Timeline Section */}
       <div className="bg-primary-700/95 pt-64">
-        <section
-          id="timeline"
-          className="relative z-10 rounded-md bg-neutral-50 md:mx-5"
-        >
-          <BorderCorner />
-          <h2 className="pt-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
-            TIMELINE
-          </h2>
-          <Timeline />
-        </section>
+        <div className="container">
+          <section
+            id="timeline"
+            className="relative z-10 rounded-md bg-neutral-50 px-12 py-6"
+          >
+            <BorderCorner />
+            <h2 className="pb-8 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
+              TIMELINE
+            </h2>
+            <Timeline />
+          </section>
+        </div>
       </div>
+
       <div className="bg-primary-700/95 pt-64">
-        <section id="faq" className="relative z-10 space-y-4 px-3">
+        <section id="faq" className="container relative z-10 space-y-4">
           <BlurFade inView delay={0.25 * 2}>
-            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50 md:text-4xl">
               FAQ
             </h2>
           </BlurFade>
@@ -159,9 +160,9 @@ export default function HomePage() {
       </div>
 
       <div className="bg-primary-700/95 pt-64">
-        <section className="relative z-10 space-y-4 px-3">
+        <section className="container relative z-10 space-y-4">
           <BlurFade inView delay={0.25 * 2}>
-            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50 md:text-4xl">
               SPONSOR & MEDIA PARTNER
             </h2>
           </BlurFade>

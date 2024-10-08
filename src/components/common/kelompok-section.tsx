@@ -143,11 +143,11 @@ export function KelompokSection() {
 
           <div className="flex min-h-[350px] flex-col gap-y-2 pt-2">
             <div className="space-y-1">
-              <h3 className="text-center font-rock-n-roll-one text-2xl font-normal leading-tight tracking-wider">
+              <h3 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider">
                 {`Kelompok ${group?.id}`}
               </h3>
 
-              <h4 className="text-center font-bonobo text-xl capitalize">
+              <h4 className="text-center font-bonobo text-2xl capitalize">
                 {group?.name}
               </h4>
             </div>
@@ -156,11 +156,11 @@ export function KelompokSection() {
               {mentee?.id} - {mentee?.name}
             </h4>
 
-            {/* <div className="flex flex-col gap-2">
-              <p className="text-center font-bonobo capitalize leading-5">
+            <div className="flex flex-col gap-2">
+              <p className="font-bonobo capitalize leading-5">
                 {group?.mentor.name.toLowerCase()}
               </p>
-            </div> */}
+            </div>
           </div>
 
           <div className="absolute -bottom-10 left-0 right-0 -z-10 flex justify-center">
