@@ -104,8 +104,12 @@ export function FAQAccordions() {
               {faq.question}
             </p>
           </AccordionPrimitive.AccordionTrigger>
-          <AccordionPrimitive.AccordionContent className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-            <div className="p-5 text-neutral-50">{faq.answer}</div>
+          <AccordionPrimitive.AccordionContent className="overflow-hidden py-2 text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+            <div className="bg-neutral-900/80 p-1">
+              <div className="border border-primary-50/25 p-3 text-neutral-50">
+                {faq.answer}
+              </div>
+            </div>
           </AccordionPrimitive.AccordionContent>
         </AccordionPrimitive.AccordionItem>
       ))}

@@ -32,7 +32,10 @@ export function CountdownTabs({ tabs }: TabsProps) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="relative z-10 flex flex-col items-center space-y-4 px-3 py-6">
+    <section
+      id="countdown"
+      className="relative z-10 flex flex-col items-center space-y-4 px-3 py-6"
+    >
       <h2 className="pb-4 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
         COUNTDOWN
       </h2>
@@ -123,7 +126,7 @@ export function CountdownTabs({ tabs }: TabsProps) {
       <p className="w-full text-right font-bonobo text-sm text-neutral-300">
         *Geser tab untuk melihat hari lainnya
       </p>
-    </div>
+    </section>
   );
 }
 
