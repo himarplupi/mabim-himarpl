@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useLenis } from "lenis/react";
 
 import { BorderCorner } from "@/components/ornament/border";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -19,12 +19,22 @@ import { cn } from "@/lib/utils";
 import { type GroupMabim, groupMabim, type Mentee } from "./group-mabim";
 
 export function KelompokSection() {
-  const router = useRouter();
+  const lenis = useLenis();
   const [name, setName] = useState("");
   const [mentee, setMentee] = useState<Mentee | undefined>();
   const [group, setGroup] = useState<GroupMabim | undefined>();
   const [isNotFound, setIsNotFound] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen || isNotFound) {
+      lenis?.stop();
+    } else {
+      lenis?.start();
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen, isNotFound]);
 
   const handleSearch = () => {
     const currentGroup = groupMabim.find((group) =>

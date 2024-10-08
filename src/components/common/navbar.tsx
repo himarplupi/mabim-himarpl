@@ -74,7 +74,7 @@ export function Navbar() {
                 e.preventDefault();
                 setIsOpen(false);
                 lenis?.scrollTo(link.href, {
-                  offset: link.href !== "#main" ? -64 : 0,
+                  offset: link.href !== "#main" ? -96 : 0,
                 });
               }}
             >
