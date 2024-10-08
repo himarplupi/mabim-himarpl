@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const textClassName = "text-4xl md:text-6xl lg:text-8xl";
+const textClassName = "text-4xl md:text-5xl lg:text-6xl";
 
 export const ExpiredNotice = () => {
   return (
@@ -100,9 +100,7 @@ export const DateTimeDisplay = ({
         <motion.p className={textClassName}>
           {(value ?? 0) < 10 ? `0${value}` : value}
         </motion.p>
-        <motion.span className="-mt-1 lowercase md:-mt-4 md:text-lg">
-          {type}
-        </motion.span>
+        <motion.span className="-mt-1 lowercase md:text-lg">{type}</motion.span>
       </motion.div>
     </div>
   );

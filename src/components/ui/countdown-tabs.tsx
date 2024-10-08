@@ -36,11 +36,11 @@ export function CountdownTabs({ tabs }: TabsProps) {
       id="countdown"
       className="relative z-10 flex flex-col items-center space-y-4 px-3 py-6"
     >
-      <h2 className="pb-4 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+      <h2 className="pb-4 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50 md:text-4xl">
         COUNTDOWN
       </h2>
 
-      <div className="w-full rounded-md bg-neutral-900 p-1">
+      <div className="mx-auto w-full max-w-screen-md rounded-md bg-neutral-900 p-1">
         <div className="w-full border-neutral-50 bg-neutral-900 text-neutral-200">
           <Carousel
             plugins={[
@@ -103,7 +103,7 @@ export function CountdownTabs({ tabs }: TabsProps) {
         </div>
       </div>
 
-      <div className="relative mt-4 w-full rounded-md border border-gray-300 bg-primary-600 px-6 pb-2 pt-4">
+      <div className="relative mx-auto mt-4 w-full max-w-screen-md rounded-md border border-gray-300 bg-primary-600 px-6 pb-2 pt-4">
         <TopLeftCorner
           className="absolute left-1 top-1 scale-75"
           pathClassName="fill-neutral-50 opacity-50"
@@ -123,7 +123,7 @@ export function CountdownTabs({ tabs }: TabsProps) {
         <CountdownTimer targetDate={new Date(tabs[activeTab]?.date ?? "")} />
       </div>
 
-      <p className="w-full text-right font-bonobo text-sm text-neutral-300">
+      <p className="w-full text-right font-bonobo text-sm text-neutral-300 md:hidden md:text-base">
         *Geser tab untuk melihat hari lainnya
       </p>
     </section>
