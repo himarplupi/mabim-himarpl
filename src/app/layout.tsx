@@ -1,6 +1,8 @@
 import { type Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 
+import { ReactLenis } from "@/components/common/react-lenis";
+
 import {
   fontBonobo,
   fontRockNRollOne,
@@ -24,7 +26,9 @@ export default function RootLayout({
       lang="id"
       className={`${GeistSans.variable} ${fontBonobo.variable} ${fontZelda.variable} ${fontRockNRollOne.variable} ${fontSheikahComplete.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <ReactLenis>{children}</ReactLenis>
+      </body>
     </html>
   );
 }
