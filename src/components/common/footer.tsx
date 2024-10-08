@@ -31,15 +31,15 @@ const navLinks = [
 
 export function Footer() {
   return (
-    <footer className="container relative z-10 flex flex-col gap-4 bg-primary-800">
-      <p className="font-bonobo text-neutral-200">
+    <footer className="container relative z-10 flex flex-col gap-4 bg-primary-800 py-8">
+      <p className="font-bonobo text-lg text-neutral-200">
         Tujuan dari Mabim RPL 2024 adalah untuk membantu mahasiswa baru dalam
         mengorientasikan diri mereka terhadap lingkungan akademik, mata kuliah
         dan kegiatan yang berkaitan dengan Rekayasa Perangkat Lunak UPI Kampus
         Cibiru.
       </p>
 
-      <ul className="flex flex-col gap-y-2">
+      <ul className="ml-4 flex flex-col gap-y-2 border-l border-primary-600 py-3 pl-6">
         {navLinks.map((link) => (
           <li key={link.name} className="overflow-hidden">
             <Link
