@@ -100,13 +100,13 @@ export function FAQAccordions() {
                 activeIndex === faq.id && "fill-neutral-50",
               )}
             />
-            <p className="text-left font-semibold text-neutral-50">
+            <p className="text-left font-semibold text-neutral-50 md:text-lg">
               {faq.question}
             </p>
           </AccordionPrimitive.AccordionTrigger>
           <AccordionPrimitive.AccordionContent className="overflow-hidden py-2 text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
             <div className="bg-neutral-900/80 p-1">
-              <div className="border border-primary-50/25 p-3 text-neutral-50">
+              <div className="border border-primary-50/25 p-3 text-neutral-50 md:text-lg">
                 {faq.answer}
               </div>
             </div>

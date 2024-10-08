@@ -43,8 +43,8 @@ export function Footer() {
   };
 
   return (
-    <footer className="container relative z-10 flex flex-col gap-4 bg-primary-800 py-8">
-      <p className="font-bonobo text-lg text-neutral-200">
+    <footer className="container relative z-10 flex flex-col gap-4 bg-primary-800 py-8 md:flex-row">
+      <p className="font-bonobo text-lg text-neutral-200 md:text-xl">
         Tujuan dari Mabim RPL 2024 adalah untuk membantu mahasiswa baru dalam
         mengorientasikan diri mereka terhadap lingkungan akademik, mata kuliah
         dan kegiatan yang berkaitan dengan Rekayasa Perangkat Lunak UPI Kampus

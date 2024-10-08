@@ -133,7 +133,7 @@ export default function HomePage() {
           className="relative z-10 rounded-md bg-neutral-50"
         >
           <BorderCorner />
-          <h2 className="pt-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
+          <h2 className="pt-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
             TIMELINE
           </h2>
           <ul className="font-bonobo text-neutral-950">
@@ -150,7 +150,12 @@ export default function HomePage() {
                   <div className="m-4 h-auto w-2 bg-neutral-400"></div>
                 </div>
                 <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
+                  <li className="ml-10 w-64 text-left text-sm md:text-lg">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Inventore nulla nihil veniam minus, ipsum blanditiis
+                    cupiditate commodi ratione? Dolores ex accusamus, ab dolore
+                    odit sequi quaerat fugit libero animi omnis.
+                  </li>
                 </div>
               </div>
               <div className="flex gap-5">
@@ -217,7 +222,7 @@ export default function HomePage() {
       </div>
       <div className="bg-primary-700/95 pt-64">
         <section id="faq" className="relative z-10 space-y-4 px-3">
-          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50 md:text-4xl">
             FAQ
           </h2>
 
@@ -227,7 +232,7 @@ export default function HomePage() {
 
       <div className="bg-primary-700/95 pt-64">
         <section className="relative z-10 space-y-4 px-3">
-          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+          <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50 md:text-4xl">
             SPONSOR & MEDIA PARTNER
           </h2>
 
