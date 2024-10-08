@@ -148,103 +148,110 @@ export default function HomePage() {
       <div className="bg-primary-700/95 pt-64">
         <section className="relative z-10 rounded-md bg-neutral-50">
           <BorderCorner />
-          <h2 className="p-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
+          <h2 className="pt-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
             TIMELINE
           </h2>
-          <ul className="flex justify-center gap-10 font-bonobo font-bold text-neutral-950">
-            <div>
-              <div className="">
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="flex h-14 w-3 bg-neutral-400"></div>
+          <ul className="font-bonobo text-neutral-950">
+            <div className="p-10">
+              <div className="flex gap-5">
+                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="flex flex-col text-left font-bold">
+                  <li className="">19 Oktober 2024</li>
+                  <li className="">Technical Meeting</li>
+                </div>
               </div>
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="h-14 w-3 bg-neutral-400"></div>
+              <div className="flex">
+                <div className="flex h-auto w-56 justify-center border border-white">
+                  <div className="h-auto w-3 border border-neutral-950 bg-neutral-400"></div>
+                </div>
+                <div className="">
+                  <li className="ml-10 text-left text-sm">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Temporibus dolorem esse optio minima eius, enim accusamus at
+                    aliquam neque hic nam id molestiae ea iure laborum similique
+                    dolor vitae eligendi!
+                  </li>
+                </div>
               </div>
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="h-14 w-3 bg-neutral-400"></div>
+              <div className="flex gap-5">
+                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="flex flex-col text-left font-bold">
+                  <li className="text-left">26 Oktober 2024</li>
+                  <li className="text-left">Day 1</li>
+                </div>
               </div>
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="h-14 w-3 bg-neutral-400"></div>
+              <div className="flex">
+                <div className="flex h-auto w-56 justify-center border border-white">
+                  <div className="h-auto w-3 border border-neutral-950 bg-neutral-400"></div>
+                </div>
+                <div className="">
+                  <li className="ml-10 text-left text-sm">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Temporibus dolorem esse optio minima eius, enim accusamus at
+                    aliquam neque hic nam id molestiae ea iure laborum similique
+                    dolor vitae eligendi!
+                  </li>
+                </div>
               </div>
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
+              <div className="flex gap-5">
+                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="flex flex-col text-left font-bold">
+                  <li className="text-left">2 November 2024</li>
+                  <li className="text-left">Day 2</li>
+                </div>
+              </div>
+              <div className="flex">
+                <div className="flex h-auto w-56 justify-center border border-white">
+                  <div className="h-auto w-3 border border-neutral-950 bg-neutral-400"></div>
+                </div>
+                <div className="">
+                  <li className="ml-10 text-left text-sm">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Temporibus dolorem esse optio minima eius, enim accusamus at
+                    aliquam neque hic nam id molestiae ea iure laborum similique
+                    dolor vitae eligendi!
+                  </li>
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="flex flex-col text-left font-bold">
+                  <li className="text-left">3 November 2024</li>
+                  <li className="text-left">Day 3</li>
+                </div>
+              </div>
+              <div className="flex">
+                <div className="flex h-auto w-56 justify-center border border-white">
+                  <div className="h-auto w-3 border border-neutral-950 bg-neutral-400"></div>
+                </div>
+                <div className="">
+                  <li className="ml-10 text-left text-sm">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Temporibus dolorem esse optio minima eius, enim accusamus at
+                    aliquam neque hic nam id molestiae ea iure laborum similique
+                    dolor vitae eligendi!
+                  </li>
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <div className="h-12 w-12 rounded-full border border-neutral-950 bg-neutral-400"></div>
+                <div className="flex flex-col text-left font-bold">
+                  <li className="text-left">9 November 2024</li>
+                  <li className="text-left">Day 4</li>
+                </div>
+              </div>
+              <div className="flex">
+                <div className="flex h-auto w-56 justify-center border border-white"></div>
+                <div className="">
+                  <li className="ml-10 text-left text-sm">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Temporibus dolorem esse optio minima eius, enim accusamus at
+                    aliquam neque hic nam id molestiae ea iure laborum similique
+                    dolor vitae eligendi!
+                  </li>
+                </div>
               </div>
             </div>
-            <div>
-              <div className="pb-12">
-                <li className="text-left">19 Oktober 2024</li>
-                <li className="text-left">Technical Meeting</li>
-              </div>
-              <div className="pb-12">
-                <li className="text-left">26 Oktober 2024</li>
-                <li className="text-left">Day 1</li>
-              </div>
-              <div className="pb-12">
-                <li className="text-left">2 November 2024</li>
-                <li className="text-left">Day 2</li>
-              </div>
-              <div className="pb-12">
-                <li className="text-left">3 November 2024</li>
-                <li className="text-left">Day 3</li>
-              </div>
-              <div className="pb-12">
-                <li className="text-left">9 November 2024</li>
-                <li className="text-left">Day 4</li>
-              </div>
-            </div>
-            {/* <div className="flex justify-center">
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="h-14 w-10 bg-neutral-400"></div>
-              </div>
-              <div className="">
-                <li className="text-left">19 Oktober 2024</li>
-                <li className="text-left">Technical Meeting</li>
-              </div>
-            </div>
-            <div className="flex justify-center gap-10">
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="h-14 w-10 bg-neutral-400"></div>
-              </div>
-              <div>
-                <li className="text-left">26 Oktober 2024</li>
-                <li className="text-left">Day 1</li>
-              </div>
-            </div>
-            <div className="flex justify-center gap-10">
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="h-14 w-10 bg-neutral-400"></div>
-              </div>
-              <div>
-                <li className="text-left">2 November 2024</li>
-                <li className="text-left">Day 2</li>
-              </div>
-            </div>
-            <div className="flex justify-center gap-10">
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="h-14 w-10 bg-neutral-400"></div>
-              </div>
-              <div>
-                <li className="text-left">3 November 2024</li>
-                <li className="text-left">Day 3</li>
-              </div>
-            </div>
-            <div className="flex justify-center gap-10">
-              <div>
-                <div className="h-10 w-10 rounded-full bg-neutral-400"></div>
-                <div className="h-14 w-10 bg-neutral-400"></div>
-              </div>
-              <div>
-                <li className="text-left">9 November 2024</li>
-                <li className="text-left">Day 4</li>
-              </div>
-            </div> */}
           </ul>
         </section>
       </div>
