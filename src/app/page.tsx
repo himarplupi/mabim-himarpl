@@ -5,6 +5,7 @@ import { FAQAccordions } from "@/components/common/faq-accordions";
 import { Footer } from "@/components/common/footer";
 import { GlobalFooter } from "@/components/common/global-footer";
 import { KelompokSection } from "@/components/common/kelompok-section";
+import { Timeline } from "@/components/common/timeline";
 import { BorderCorner } from "@/components/ornament/border";
 import { Hieroglyph } from "@/components/ornament/hieroglyph";
 import { Separator } from "@/components/ornament/separator";
@@ -136,89 +137,13 @@ export default function HomePage() {
       <div className="bg-primary-700/95 pt-64">
         <section
           id="timeline"
-          className="relative z-10 rounded-md bg-neutral-50"
+          className="relative z-10 rounded-md bg-neutral-50 md:mx-5"
         >
           <BorderCorner />
-          <h2 className="pt-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
+          <h2 className="pt-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
             TIMELINE
           </h2>
-          <ul className="font-bonobo text-neutral-950">
-            <div className="p-10">
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="">19 Oktober 2024</li>
-                  <li className="">Technical Meeting</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
-                </div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="text-left">26 Oktober 2024</li>
-                  <li className="text-left">Day 1</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
-                </div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="text-left">2 November 2024</li>
-                  <li className="text-left">Day 2</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="m-4 h-auto w-2 border bg-neutral-400"></div>
-                </div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="text-left">3 November 2024</li>
-                  <li className="text-left">Day 3</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
-                </div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="text-left">9 November 2024</li>
-                  <li className="text-left">Day 4</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white"></div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-            </div>
-          </ul>
+          <Timeline />
         </section>
       </div>
       <div className="bg-primary-700/95 pt-64">
