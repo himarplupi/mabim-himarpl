@@ -21,12 +21,12 @@ const navLinks = [
     href: "#main",
   },
   {
-    name: "Countdown",
-    href: "#countdown",
-  },
-  {
     name: "Kelompok",
     href: "#kelompok",
+  },
+  {
+    name: "Countdown",
+    href: "#countdown",
   },
   {
     name: "Timeline",
@@ -43,25 +43,52 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed left-0 right-0 top-0 z-50 mx-auto">
-      <nav className="container flex items-center justify-between bg-primary-950">
-        <div className="flex items-center gap-x-4">
+    <div className="fixed left-0 right-0 top-0 z-50 md:left-2 md:right-2 md:top-2">
+      <nav className="container flex items-center justify-between bg-primary-950 md:rounded-md">
+        <div className="flex items-center gap-x-4 md:gap-x-6 md:py-2">
           <div className="relative h-12 w-14">
             <Image
               // eslint-disable-next-line
               src={LogoMabim}
               alt="Logo Mabim"
-              className="absolute -bottom-3 left-0 h-14 w-14"
+              className="absolute -bottom-3 left-0 h-14 w-14 md:-bottom-4 md:scale-125"
             />
           </div>
-          <h3 className="font-zelda text-2xl tracking-tight text-primary-50">
+          <h3 className="font-zelda text-2xl tracking-wider text-primary-50 md:text-3xl">
             MABIMRPL 2024
           </h3>
         </div>
 
+        <div className="hidden items-center gap-x-4 md:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={cn(
+                buttonVariants({
+                  variant: "link",
+                }),
+                "p-1 font-bonobo text-neutral-200 lg:text-lg",
+              )}
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                lenis?.scrollTo(link.href, {
+                  offset: link.href !== "#main" ? -64 : 0,
+                });
+              }}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <Button size="icon" className="bg-primary-950 hover:bg-primary-900">
+            <Button
+              size="icon"
+              className="bg-primary-950 hover:bg-primary-900 md:hidden"
+            >
               <MenuIndicator pathClassName="fill-primary-50" />
             </Button>
           </SheetTrigger>

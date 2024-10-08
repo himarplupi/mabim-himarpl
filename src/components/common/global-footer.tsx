@@ -17,80 +17,82 @@ import {
 
 export function GlobalFooter() {
   return (
-    <footer className="container bg-primary-800 pb-16 pt-8 font-bonobo text-primary-50 md:pb-0">
-      <div className="flex flex-col gap-y-6 md:px-8">
-        <div className="flex flex-col items-center gap-2 sm:flex-row">
-          <Image
-            src={LogoUPICibiru}
-            alt="logo Kampus UPI di Cibiru"
-            width={150}
-          />
-          <Image src={LogoHIMARPL} alt="logo HIMARPL" width={200} />
-          <Image
-            src={LogoKabinetAscendia}
-            alt="logo Kabinet Ascendia"
-            width={150}
-          />
+    <footer className="bg-primary-800 pb-16 pt-8 font-bonobo text-primary-50 md:pb-0">
+      <div className="container">
+        <div className="flex flex-col gap-y-6 md:px-8">
+          <div className="flex flex-col items-center gap-2 sm:flex-row">
+            <Image
+              src={LogoUPICibiru}
+              alt="logo Kampus UPI di Cibiru"
+              width={150}
+            />
+            <Image src={LogoHIMARPL} alt="logo HIMARPL" width={200} />
+            <Image
+              src={LogoKabinetAscendia}
+              alt="logo Kabinet Ascendia"
+              width={150}
+            />
+          </div>
+
+          <div className="flex flex-col justify-between gap-4 sm:flex-row">
+            <SocialMediaLinks />
+
+            <Alamat />
+
+            <Pranala />
+
+            <MediaPartner />
+          </div>
         </div>
 
-        <div className="flex flex-col justify-between gap-4 sm:flex-row">
-          <SocialMediaLinks />
-
-          <Alamat />
-
-          <Pranala />
-
-          <MediaPartner />
+        <div className="mt-6 space-y-1 py-6">
+          <p className="text-center text-sm leading-5">
+            Passionally crafted by{" "}
+            <Link
+              href="https://blog.himarpl.com/@dikdns"
+              target="_blank"
+              className={cn(
+                "font-bonobo font-semibold text-neutral-100 hover:underline",
+              )}
+            >
+              Andika
+            </Link>
+            {", "}
+            <Link
+              href="https://blog.himarpl.com/@arsya-permana"
+              target="_blank"
+              className={cn(
+                "font-bonobo font-semibold text-neutral-100 hover:underline",
+              )}
+            >
+              Arsya
+            </Link>
+            {", and "}
+            <Link
+              href="https://blog.himarpl.com/@zamzami"
+              target="_blank"
+              className={cn(
+                "font-bonobo font-semibold text-neutral-100 hover:underline",
+              )}
+            >
+              Zamzami
+            </Link>
+            . Supported by department{" "}
+            <a
+              className={cn(
+                "font-bonobo font-semibold text-neutral-100 hover:underline",
+              )}
+              target="_blank"
+              href="https://www.himarpl.com/about/be/kominfo"
+            >
+              Kominfo
+            </a>{" "}
+            .
+          </p>
+          <p className="text-center text-sm leading-5">
+            &copy; 2024 HIMARPL UPI, All rights reserved.
+          </p>
         </div>
-      </div>
-
-      <div className="mt-6 space-y-1 py-6">
-        <p className="text-center text-sm leading-5">
-          Passionally crafted by{" "}
-          <Link
-            href="https://blog.himarpl.com/@dikdns"
-            target="_blank"
-            className={cn(
-              "font-bonobo font-semibold text-neutral-100 hover:underline",
-            )}
-          >
-            Andika
-          </Link>
-          {", "}
-          <Link
-            href="https://blog.himarpl.com/@arsya-permana"
-            target="_blank"
-            className={cn(
-              "font-bonobo font-semibold text-neutral-100 hover:underline",
-            )}
-          >
-            Arsya
-          </Link>
-          {", and "}
-          <Link
-            href="https://blog.himarpl.com/@zamzami"
-            target="_blank"
-            className={cn(
-              "font-bonobo font-semibold text-neutral-100 hover:underline",
-            )}
-          >
-            Zamzami
-          </Link>
-          . Supported by department{" "}
-          <a
-            className={cn(
-              "font-bonobo font-semibold text-neutral-100 hover:underline",
-            )}
-            target="_blank"
-            href="https://www.himarpl.com/about/be/kominfo"
-          >
-            Kominfo
-          </a>{" "}
-          .
-        </p>
-        <p className="text-center text-sm leading-5">
-          &copy; 2024 HIMARPL UPI, All rights reserved.
-        </p>
       </div>
     </footer>
   );

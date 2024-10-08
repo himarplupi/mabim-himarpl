@@ -5,6 +5,7 @@ import { FAQAccordions } from "@/components/common/faq-accordions";
 import { Footer } from "@/components/common/footer";
 import { GlobalFooter } from "@/components/common/global-footer";
 import { KelompokSection } from "@/components/common/kelompok-section";
+import { Timeline } from "@/components/common/timeline";
 import { BorderCorner } from "@/components/ornament/border";
 import { Hieroglyph } from "@/components/ornament/hieroglyph";
 import { Separator } from "@/components/ornament/separator";
@@ -66,27 +67,27 @@ export default function HomePage() {
         backgroundImage: "url(./assets/main-pattern.webp)",
       }}
     >
-      <div className="bg-gradient-to-b from-primary-600/95 to-primary-700/95 px-6">
-        <section className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center gap-y-3">
+      <div className="bg-gradient-to-b from-primary-600/95 to-primary-700/95">
+        <section className="container relative z-10 flex min-h-screen w-full flex-col items-center justify-center gap-y-3">
           <BlurFade delay={0.25} inView>
-            <h1 className="text-center font-zelda text-5xl leading-tight tracking-wider text-neutral-50">
+            <h1 className="text-center font-zelda text-5xl leading-tight tracking-wider text-neutral-50 md:text-7xl">
               EXPLORING MABIM IN{" "}
               <SparklesText
                 text="WONDERLAND"
-                className="text-5xl font-normal leading-tight tracking-wider text-neutral-50"
+                className="text-5xl font-normal leading-tight tracking-wider text-neutral-50 md:text-7xl"
               />
             </h1>
           </BlurFade>
 
           <BlurFade delay={0.25 * 2} inView>
             <Separator
-              className="w-full"
+              className="w-full max-w-96"
               pathClassName="fill-primary-foreground"
             />
           </BlurFade>
 
           <BlurFade delay={0.25 * 3} inView>
-            <p className="text-center font-bonobo text-neutral-50">
+            <p className="max-w-[640px] text-center font-bonobo text-neutral-50 md:text-lg">
               {`"Membangun Kepemimpinan Diri di Era Revolusi Industri: Transformasi Diri untuk Masa Depan Digital"`}
             </p>
           </BlurFade>
@@ -94,28 +95,32 @@ export default function HomePage() {
           <BlurFade
             delay={0.25 * 4}
             inView
-            className="mt-4 flex w-full flex-col gap-3"
+            className="mt-4 flex w-full flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6"
           >
-            <Button variant="outline">BOOKLET</Button>
-            <Button variant="outline">TWIBBON</Button>
+            <Button variant="outline" className="w-full sm:w-52">
+              BOOKLET
+            </Button>
+            <Button variant="outline" className="w-full sm:w-52">
+              TWIBBON
+            </Button>
           </BlurFade>
         </section>
       </div>
 
-      <div className="absolute top-[650px] z-[5] h-64 w-[512px] scale-150">
+      <div className="absolute top-[650px] z-[5] h-64 w-[512px] scale-150 sm:w-full md:top-[550px]">
         <BlurFade delay={0.25 * 8} inView className="relative h-full w-full">
           {/* eslint-disable-next-line  */}
           <Image src={Vector1} alt="Vector 1" fill />
         </BlurFade>
       </div>
 
-      <div className="absolute left-0 right-0 top-[825px] z-[10] opacity-75">
+      <div className="absolute left-0 right-0 top-[825px] z-[10] opacity-75 sm:top-[850px] md:top-[768px] lg:top-[825px]">
         <Hieroglyph length={32} className="text-primary-950" />
       </div>
 
-      <Wave className="absolute -left-32 top-10 opacity-50" />
+      <Wave className="absolute -left-8 top-10 opacity-50 sm:left-0 sm:w-full md:top-10" />
 
-      <Wave className="absolute -left-32 top-[700px] rotate-180 opacity-50" />
+      <Wave className="absolute -left-8 top-[700px] rotate-180 opacity-50 sm:left-0 sm:w-full md:top-[700px]" />
 
       <div className="bg-primary-700/95 pt-96">
         <KelompokSection />
@@ -130,94 +135,13 @@ export default function HomePage() {
       <div className="bg-primary-700/95 pt-64">
         <section
           id="timeline"
-          className="relative z-10 rounded-md bg-neutral-50"
+          className="relative z-10 rounded-md bg-neutral-50 md:mx-5"
         >
           <BorderCorner />
           <h2 className="pt-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
             TIMELINE
           </h2>
-          <ul className="font-bonobo text-neutral-950">
-            <div className="p-10">
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="">19 Oktober 2024</li>
-                  <li className="">Technical Meeting</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
-                </div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm md:text-lg">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Inventore nulla nihil veniam minus, ipsum blanditiis
-                    cupiditate commodi ratione? Dolores ex accusamus, ab dolore
-                    odit sequi quaerat fugit libero animi omnis.
-                  </li>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="text-left">26 Oktober 2024</li>
-                  <li className="text-left">Day 1</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
-                </div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="text-left">2 November 2024</li>
-                  <li className="text-left">Day 2</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="m-4 h-auto w-2 border bg-neutral-400"></div>
-                </div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="text-left">3 November 2024</li>
-                  <li className="text-left">Day 3</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white">
-                  <div className="m-4 h-auto w-2 bg-neutral-400"></div>
-                </div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <div className="h-12 w-12 rounded-full bg-neutral-400"></div>
-                <div className="flex flex-col text-left font-bold">
-                  <li className="text-left">9 November 2024</li>
-                  <li className="text-left">Day 4</li>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="flex h-auto w-56 justify-center border border-white"></div>
-                <div className="">
-                  <li className="ml-10 w-64 text-left text-sm"></li>
-                </div>
-              </div>
-            </div>
-          </ul>
+          <Timeline />
         </section>
       </div>
       <div className="bg-primary-700/95 pt-64">
@@ -225,7 +149,6 @@ export default function HomePage() {
           <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50 md:text-4xl">
             FAQ
           </h2>
-
           <FAQAccordions />
         </section>
       </div>

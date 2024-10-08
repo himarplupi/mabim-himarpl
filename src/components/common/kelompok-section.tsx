@@ -6,16 +6,15 @@ import { useRouter } from "next/navigation";
 
 import { BorderCorner } from "@/components/ornament/border";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogTitle,
-} from "../ui/dialog";
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 import { type GroupMabim, groupMabim, type Mentee } from "./group-mabim";
 
@@ -50,43 +49,45 @@ export function KelompokSection() {
   return (
     <section
       id="kelompok"
-      className="relative z-10 space-y-4 rounded-md bg-neutral-50 px-6 py-8 text-center"
+      className="relative z-10 mx-auto max-w-screen-md rounded-md bg-neutral-50 px-6 py-8 text-center"
     >
       <BorderCorner />
 
-      <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
-        TEMUKAN KELOMPOK MABIM-KU
-      </h2>
+      <div className="container space-y-3">
+        <h2 className="mx-auto max-w-[512px] pb-2 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
+          TEMUKAN KELOMPOK MABIM-KU
+        </h2>
 
-      <p className="text-center font-bonobo text-neutral-950">
-        Cari kelompok dengan menuliskan nama lengkap kamu!
-      </p>
+        <p className="text-center font-bonobo text-neutral-950 md:text-lg">
+          Cari kelompok dengan menuliskan nama lengkap kamu!
+        </p>
 
-      <div className="rounded-md bg-neutral-900 p-1">
-        <Input
-          type="text"
-          placeholder="Ketik disini..."
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              if (name.length > 0) {
-                handleSearch();
+        <div className="mx-auto max-w-64 rounded-md bg-neutral-900 p-1">
+          <Input
+            type="text"
+            placeholder="Ketik disini..."
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                if (name.length > 0) {
+                  handleSearch();
+                }
               }
-            }
-          }}
-          className="border-neutral-50/40 bg-neutral-900 text-neutral-200"
-        />
-      </div>
+            }}
+            className="border-neutral-50/40 bg-neutral-900 text-neutral-200"
+          />
+        </div>
 
-      <Button
-        disabled={name.length === 0}
-        className="w-full"
-        onClick={handleSearch}
-      >
-        CARI KELOMPOK
-      </Button>
+        <Button
+          disabled={name.length === 0}
+          className="mx-auto w-full max-w-64"
+          onClick={handleSearch}
+        >
+          CARI KELOMPOK
+        </Button>
+      </div>
 
       {/* Not Found Dialog */}
       <Dialog open={isNotFound} onOpenChange={setIsNotFound}>
@@ -130,12 +131,21 @@ export function KelompokSection() {
               {group?.name}
             </h4>
             <div className="flex flex-col gap-2">
-              <p className="font-bonobo leading-5">
-                <span className="font-semibold">Mentor:</span>{" "}
-                {group?.mentor.name}
+              <p className="text-center font-bonobo capitalize leading-5">
+                {group?.mentor.name.toLowerCase()}
               </p>
             </div>
           </div>
+
+          <DialogFooter>
+            <Link
+              href={`https://wa.me/${group?.mentor.phone}`}
+              target="_blank"
+              className={cn(buttonVariants())}
+            >
+              Hubungi Mentor
+            </Link>
+          </DialogFooter>
         </DialogContent>
       </Dialog>
     </section>

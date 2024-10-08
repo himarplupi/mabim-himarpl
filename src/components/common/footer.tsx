@@ -28,6 +28,18 @@ const navLinks = [
     name: "FAQ",
     href: "#faq",
   },
+  {
+    name: "Template Nametag",
+    href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/template-nametag.pdf",
+  },
+  {
+    name: "Template Surat Keterangan",
+    href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/template-sk.pdf",
+  },
+  {
+    name: "Form Pelaporan Panitia",
+    href: "https://google.com",
+  },
 ];
 
 const isExternalLink = (href: string) => href.includes("http");
@@ -43,28 +55,30 @@ export function Footer() {
   };
 
   return (
-    <footer className="container relative z-10 flex flex-col gap-4 bg-primary-800 py-8 md:flex-row">
-      <p className="font-bonobo text-lg text-neutral-200 md:text-xl">
-        Tujuan dari Mabim RPL 2024 adalah untuk membantu mahasiswa baru dalam
-        mengorientasikan diri mereka terhadap lingkungan akademik, mata kuliah
-        dan kegiatan yang berkaitan dengan Rekayasa Perangkat Lunak UPI Kampus
-        Cibiru.
-      </p>
+    <footer className="relative z-10 bg-primary-800">
+      <div className="container flex flex-col gap-4 py-8 md:flex-row">
+        <p className="font-bonobo text-lg text-neutral-200 md:text-xl">
+          Tujuan dari Mabim RPL 2024 adalah untuk membantu mahasiswa baru dalam
+          mengorientasikan diri mereka terhadap lingkungan akademik, mata kuliah
+          dan kegiatan yang berkaitan dengan Rekayasa Perangkat Lunak UPI Kampus
+          Cibiru.
+        </p>
 
-      <ul className="ml-4 flex flex-col gap-y-2 border-l border-primary-600 py-3 pl-6">
-        {navLinks.map((link) => (
-          <li key={link.name} className="overflow-hidden">
-            <Link
-              className="inline-block font-bonobo text-lg leading-5 text-primary-200 hover:underline"
-              href={link.href}
-              target={isExternalLink(link.href) ? "_blank" : undefined}
-              onClick={(e) => handleLinkClick(link.href, e)}
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+        <ul className="ml-4 flex flex-col gap-y-2 border-l border-primary-600 py-3 pl-6">
+          {navLinks.map((link) => (
+            <li key={link.name} className="overflow-hidden">
+              <Link
+                className="inline-block font-bonobo text-lg leading-5 text-primary-200 hover:underline"
+                href={link.href}
+                target={isExternalLink(link.href) ? "_blank" : undefined}
+                onClick={(e) => handleLinkClick(link.href, e)}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 }
