@@ -43,8 +43,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed left-0 right-0 top-0 z-50 bg-primary-950">
-      <nav className="container flex items-center justify-between">
+    <div className="fixed left-0 right-0 top-0 z-50 md:left-2 md:right-2 md:top-2">
+      <nav className="container flex items-center justify-between bg-primary-950 md:rounded-md">
         <div className="flex items-center gap-x-4 md:gap-x-6 md:py-2">
           <div className="relative h-12 w-14">
             <Image

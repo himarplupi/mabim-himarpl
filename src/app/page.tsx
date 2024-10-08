@@ -61,32 +61,32 @@ export default function HomePage() {
   return (
     <main
       id="main"
-      className="relative min-h-screen overflow-hidden bg-[length:512px_512px] bg-repeat"
+      className="relative min-h-screen overflow-hidden bg-[length:512px_512px] bg-repeat xl:max-h-[768px] xl:min-h-fit"
       style={{
         backgroundImage: "url(./assets/main-pattern.webp)",
       }}
     >
-      <div className="bg-gradient-to-b from-primary-600/95 to-primary-700/95 px-6">
-        <section className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center gap-y-3">
+      <div className="bg-gradient-to-b from-primary-600/95 to-primary-700/95">
+        <section className="container relative z-10 flex min-h-screen w-full flex-col items-center justify-center gap-y-3">
           <BlurFade delay={0.25} inView>
-            <h1 className="text-center font-zelda text-5xl leading-tight tracking-wider text-neutral-50">
+            <h1 className="text-center font-zelda text-5xl leading-tight tracking-wider text-neutral-50 md:text-7xl">
               EXPLORING MABIM IN{" "}
               <SparklesText
                 text="WONDERLAND"
-                className="text-5xl font-normal leading-tight tracking-wider text-neutral-50"
+                className="text-5xl font-normal leading-tight tracking-wider text-neutral-50 md:text-7xl"
               />
             </h1>
           </BlurFade>
 
           <BlurFade delay={0.25 * 2} inView>
             <Separator
-              className="w-full"
+              className="w-full max-w-96"
               pathClassName="fill-primary-foreground"
             />
           </BlurFade>
 
           <BlurFade delay={0.25 * 3} inView>
-            <p className="text-center font-bonobo text-neutral-50">
+            <p className="max-w-[640px] text-center font-bonobo text-neutral-50 md:text-lg">
               {`"Membangun Kepemimpinan Diri di Era Revolusi Industri: Transformasi Diri untuk Masa Depan Digital"`}
             </p>
           </BlurFade>
@@ -94,10 +94,14 @@ export default function HomePage() {
           <BlurFade
             delay={0.25 * 4}
             inView
-            className="mt-4 flex w-full flex-col gap-3"
+            className="mt-4 flex w-full flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6"
           >
-            <Button variant="outline">BOOKLET</Button>
-            <Button variant="outline">TWIBBON</Button>
+            <Button variant="outline" className="w-full sm:w-52">
+              BOOKLET
+            </Button>
+            <Button variant="outline" className="w-full sm:w-52">
+              TWIBBON
+            </Button>
           </BlurFade>
         </section>
       </div>
