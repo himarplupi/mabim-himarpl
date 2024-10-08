@@ -60,6 +60,7 @@ const SponsorMediaPartnerCard = ({ logo }: { logo: string }) => {
 export default function HomePage() {
   return (
     <main
+      id="main"
       className="relative min-h-screen overflow-hidden bg-[length:512px_512px] bg-repeat"
       style={{
         backgroundImage: "url(./assets/main-pattern.webp)",
@@ -117,7 +118,10 @@ export default function HomePage() {
       <Wave className="absolute -left-32 top-[700px] rotate-180 opacity-50" />
 
       <div className="bg-primary-700/95 pt-96">
-        <section className="relative z-10 space-y-4 rounded-md bg-neutral-50 px-6 py-8 text-center">
+        <section
+          id="kelompok"
+          className="relative z-10 space-y-4 rounded-md bg-neutral-50 px-6 py-8 text-center"
+        >
           <BorderCorner />
 
           <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
@@ -147,7 +151,10 @@ export default function HomePage() {
 
       {/* New Timeline Section */}
       <div className="bg-primary-700/95 pt-64">
-        <section className="relative z-10 rounded-md bg-neutral-50">
+        <section
+          id="timeline"
+          className="relative z-10 rounded-md bg-neutral-50"
+        >
           <BorderCorner />
           <h2 className="p-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950">
             TIMELINE
@@ -251,7 +258,7 @@ export default function HomePage() {
       </div>
 
       <div className="bg-primary-700/95 pt-64">
-        <section className="relative z-10 space-y-4 px-3">
+        <section id="faq" className="relative z-10 space-y-4 px-3">
           <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
             FAQ
           </h2>

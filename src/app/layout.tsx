@@ -1,6 +1,7 @@
 import { type Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 
+import { Navbar } from "@/components/common/navbar";
 import { ReactLenis } from "@/components/common/react-lenis";
 import { env } from "@/env";
 
@@ -29,7 +30,10 @@ export default function RootLayout({
     >
       <body>
         {env.NODE_ENV === "development" ? (
-          <ReactLenis>{children}</ReactLenis>
+          <>
+            <Navbar />
+            <ReactLenis>{children}</ReactLenis>
+          </>
         ) : (
           <main className="flex h-screen items-center justify-center">
             <h1 className="text-center font-bonobo text-2xl font-semibold">
