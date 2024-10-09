@@ -8,6 +8,8 @@ import { SponsorMediaSection } from "@/components/common/sponsor-media-section";
 import { TimelineSection } from "@/components/common/timeline-section";
 import { CountdownTabs } from "@/components/ui/countdown-tabs";
 
+export const dynamic = "force-static";
+
 export default function HomePage() {
   return (
     <main
