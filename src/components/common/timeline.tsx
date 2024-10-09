@@ -15,29 +15,29 @@ interface TimelineItemComponentProps {
 
 const timeline: TimelineItemProps[] = [
   {
-    date: "2024-10-09",
+    date: "2024-10-19",
     title: "Technical Meeting",
-    desc: "Test cuy",
+    desc: "",
   },
   {
     date: "2024-10-26",
     title: "Day 1",
-    desc: "Cihuy day 1",
+    desc: "",
   },
   {
     date: "2024-11-02",
     title: "Day 2",
-    desc: "Yess day 2",
+    desc: "",
   },
   {
     date: "2024-11-03",
     title: "Day 3",
-    desc: "Yess day 4",
+    desc: "",
   },
   {
     date: "2024-11-09",
     title: "Day 4",
-    desc: "Yess day 4",
+    desc: "",
   },
 ];
 
@@ -94,11 +94,11 @@ function TimelineItem({
         </div>
       </div>
       <div className="flex">
-        <div className="flex h-auto w-10 md:w-12">
+        <div className="flex h-auto min-h-24 w-10 md:w-12">
           {nextDate && (
             <div
               className={`mx-4 my-2 w-5 rounded-sm border ${isFutureDate ? "border-neutral-400/90 bg-neutral-400/80" : "border-primary-500/90 bg-primary-500/90"} shadow-md`}
-            ></div>
+            />
           )}
         </div>
         <div>
