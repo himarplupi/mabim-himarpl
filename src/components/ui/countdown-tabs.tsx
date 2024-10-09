@@ -20,16 +20,15 @@ import { cn } from "@/lib/utils";
 import { BlurFade } from "./blur-fade";
 import { ExpiredNotice, ShowCounter, useCountdown } from "./countdown-timer";
 
-interface TabProps {
-  label: string;
-  date: string;
-}
+const tabData = [
+  { label: "TM", date: "2024-10-19" },
+  { label: "Day-1", date: "2024-10-26" },
+  { label: "Day-2", date: "2024-11-02" },
+  { label: "Day-3", date: "2024-11-03" },
+  { label: "Day-4", date: "2024-11-09" },
+];
 
-interface TabsProps {
-  tabs: TabProps[];
-}
-
-export function CountdownTabs({ tabs }: TabsProps) {
+export function CountdownTabs() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -61,7 +60,7 @@ export function CountdownTabs({ tabs }: TabsProps) {
             className="w-full"
           >
             <CarouselContent>
-              {tabs.map((tab, index) => (
+              {tabData.map((tab, index) => (
                 <CarouselItem
                   key={index}
                   className="basis-1/3 pl-2 md:basis-1/5"
@@ -131,7 +130,7 @@ export function CountdownTabs({ tabs }: TabsProps) {
           className="absolute bottom-1 right-1 scale-75"
           pathClassName="fill-neutral-50 opacity-50"
         />
-        <CountdownTimer targetDate={new Date(tabs[activeTab]?.date ?? "")} />
+        <CountdownTimer targetDate={new Date(tabData[activeTab]?.date ?? "")} />
       </BlurFade>
 
       <BlurFade inView delay={0.25 * 8}>
