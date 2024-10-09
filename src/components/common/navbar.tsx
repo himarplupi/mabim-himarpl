@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, useInView } from "framer-motion"; // Import motion from Framer Motion
 import { useLenis } from "lenis/react";
 
@@ -41,16 +42,22 @@ const navLinks = [
 
 export function Navbar() {
   const lenis = useLenis();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5, margin: "100px" });
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <motion.div
       ref={ref}
       className="fixed left-0 right-0 top-0 z-50 md:left-2 md:right-2 md:top-2"
       initial={{ y: -100 }} // Start position (off-screen)
-      animate={{ y: isInView ? 0 : -100 }} // End position (on-screen)
+      animate={{ y: isClient && pathname === "/" && isInView ? 0 : -100 }} // End position (on-screen)
       transition={{
         type: "spring",
         stiffness: 100,
