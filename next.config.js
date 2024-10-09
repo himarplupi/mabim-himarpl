@@ -5,10 +5,6 @@
 await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
-const config = {
-  images: {
-    remotePatterns: [{ hostname: "placehold.co" }],
-  },
-};
+const config = {};
 
 export default config;

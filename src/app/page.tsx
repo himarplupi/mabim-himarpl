@@ -27,33 +27,33 @@ const tabData = [
 const sponsorMediaPartners = [
   {
     name: "PT. ABC",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
   {
     name: "PT. DEF",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
   {
     name: "PT. GHI",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
   {
     name: "PT. JKL",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
   {
     name: "PT. MNO",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
 ];
 
 const firstRow = sponsorMediaPartners.slice(0, sponsorMediaPartners.length / 2);
 const secondRow = sponsorMediaPartners.slice(sponsorMediaPartners.length / 2);
 
-const SponsorMediaPartnerCard = ({ logo }: { logo: string }) => {
+const SponsorMediaPartnerCard = ({ logo }: { logo: string | null }) => {
   return (
-    <figure className="relative aspect-video h-32 w-64 cursor-pointer overflow-hidden rounded-xl border p-4">
-      <Image fill alt="" src={logo} />
+    <figure className="relative aspect-video h-32 w-64 cursor-pointer overflow-hidden rounded-xl border bg-neutral-400 p-4">
+      {logo && <Image fill alt="" src={logo} />}
     </figure>
   );
 };
