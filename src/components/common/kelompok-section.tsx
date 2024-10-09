@@ -128,6 +128,7 @@ export function KelompokSection() {
                 }
               }
             }}
+            disabled
             className="border-neutral-50/40 bg-neutral-900 text-neutral-200"
           />
         </div>
