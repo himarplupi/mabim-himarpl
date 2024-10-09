@@ -28,6 +28,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Share1Icon } from "@radix-ui/react-icons";
+import { checkIfBrowserSupported, takeScreenshot } from "@xata.io/screenshot";
 
 export function KelompokSection() {
   const lenis = useLenis();
@@ -63,6 +64,37 @@ export function KelompokSection() {
       setIsOpen(true);
     } else {
       setIsNotFound(true);
+    }
+  };
+
+  const handleShare = () => {
+    if (checkIfBrowserSupported()) {
+      void takeScreenshot().then(async (screenshot) => {
+        const blob = await (await fetch(screenshot)).blob();
+        const file = new File([blob], "screenshot.png", { type: "image/png" });
+
+        // Use the Web API to share the file
+        if (navigator.share) {
+          navigator
+            .share({
+              files: [file],
+              title: "Kelompok Mabim",
+              text: `Kelompok ${group?.id} - ${group?.name}\n${mentee?.id} - ${mentee?.name}`,
+            })
+            .then(() => {
+              console.log("Share successful");
+            })
+            .catch((error) => {
+              console.error("Error sharing:", error);
+            });
+        } else {
+          const a = document.createElement("a");
+          a.href = screenshot;
+          a.download = "screenshot.png";
+          a.click();
+          a.remove();
+        }
+      });
     }
   };
 
@@ -175,14 +207,14 @@ export function KelompokSection() {
             />
 
             <div className="flex gap-4">
-              <p className="flex items-center gap-2 rounded-sm bg-neutral-900/25 px-3 py-1 font-rock-n-roll-one text-sm leading-5 text-primary-300">
+              <div className="flex items-center gap-2 rounded-sm bg-neutral-900/25 px-3 py-1 font-rock-n-roll-one text-sm leading-5 text-primary-300">
                 <SwordIndicator
                   className="h-5 w-5"
                   pathClassName="fill-primary-300"
                 />
-                {group?.mentor.metadata.stats}
-              </p>
-              <p className="relative flex items-center gap-2 rounded-sm bg-neutral-900/25 px-3 py-1 font-rock-n-roll-one text-sm leading-5 text-primary-50">
+                <span>{group?.mentor.metadata.stats}</span>
+              </div>
+              <div className="relative flex items-center gap-2 rounded-sm bg-neutral-900/25 px-3 py-1 font-rock-n-roll-one text-sm leading-5 text-primary-50">
                 <BorderBeam
                   size={48}
                   duration={4}
@@ -193,8 +225,8 @@ export function KelompokSection() {
                   className="h-5 w-5"
                   pathClassName="fill-primary-50"
                 />
-                {group?.mentor.metadata.skill}
-              </p>
+                <span>{group?.mentor.metadata.skill}</span>
+              </div>
             </div>
 
             <p className="font-bonobo text-sm leading-5 text-neutral-300">
@@ -217,6 +249,7 @@ export function KelompokSection() {
               className={cn("text-neutral-950")}
               variant="outline"
               size="icon"
+              onClick={handleShare}
             >
               <Share1Icon />
             </Button>
