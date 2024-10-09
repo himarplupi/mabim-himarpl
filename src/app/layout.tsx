@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 
 import { Navbar } from "@/components/common/navbar";
 import { ReactLenis } from "@/components/common/react-lenis";
+import { PHProvider } from "@/components/providers";
 
 import {
   fontBonobo,
@@ -28,8 +29,10 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${fontBonobo.variable} ${fontZelda.variable} ${fontRockNRollOne.variable} ${fontSheikahComplete.variable}`}
     >
       <body>
-        <Navbar />
-        <ReactLenis>{children}</ReactLenis>
+        <PHProvider>
+          <Navbar />
+          <ReactLenis>{children}</ReactLenis>
+        </PHProvider>
       </body>
     </html>
   );
