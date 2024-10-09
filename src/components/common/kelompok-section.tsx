@@ -11,7 +11,12 @@ import {
   type Mentee,
 } from "@/components/common/group-mabim";
 import { BorderCorner } from "@/components/ornament/border";
+import {
+  DoubleSwordIndicator,
+  SwordIndicator,
+} from "@/components/ornament/indicator";
 import { Separator } from "@/components/ornament/separator";
+import { BorderBeam } from "@/components/ui/border-beam";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
@@ -23,10 +28,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Share1Icon } from "@radix-ui/react-icons";
+import { checkIfBrowserSupported, takeScreenshot } from "@xata.io/screenshot";
 
 export function KelompokSection() {
   const lenis = useLenis();
-  const [name, setName] = useState("");
+  const [name, setName] = useState("Sandy Saputra");
   const [mentee, setMentee] = useState<Mentee | undefined>();
   const [group, setGroup] = useState<GroupMabim | undefined>();
   const [isNotFound, setIsNotFound] = useState(false);
@@ -58,6 +64,37 @@ export function KelompokSection() {
       setIsOpen(true);
     } else {
       setIsNotFound(true);
+    }
+  };
+
+  const handleShare = () => {
+    if (checkIfBrowserSupported()) {
+      void takeScreenshot().then(async (screenshot) => {
+        const blob = await (await fetch(screenshot)).blob();
+        const file = new File([blob], "screenshot.png", { type: "image/png" });
+
+        // Use the Web API to share the file
+        if (navigator.share) {
+          navigator
+            .share({
+              files: [file],
+              title: "Kelompok Mabim",
+              text: `Kelompok ${group?.id} - ${group?.name}\n${mentee?.id} - ${mentee?.name}`,
+            })
+            .then(() => {
+              console.log("Share successful");
+            })
+            .catch((error) => {
+              console.error("Error sharing:", error);
+            });
+        } else {
+          const a = document.createElement("a");
+          a.href = screenshot;
+          a.download = "screenshot.png";
+          a.click();
+          a.remove();
+        }
+      });
     }
   };
 
@@ -135,7 +172,9 @@ export function KelompokSection() {
 
       {/* Found Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="overflow-hidden bg-neutral-900 font-bonobo text-neutral-50">
+        <DialogContent className="overflow-hidden bg-neutral-900 p-8 font-bonobo text-neutral-50">
+          <BorderCorner pathClassName="fill-neutral-50/50" />
+
           <DialogTitle hidden>Kelompok Ditemukan</DialogTitle>
           <DialogDescription hidden>
             Berikut ini adalah kelompok yang kamu cari
@@ -143,41 +182,74 @@ export function KelompokSection() {
 
           <div className="flex min-h-[350px] flex-col gap-y-2 pt-2">
             <div className="space-y-1">
-              <h3 className="text-center font-rock-n-roll-one text-2xl font-normal leading-tight tracking-wider">
+              <h3 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wide">
                 {`Kelompok ${group?.id}`}
               </h3>
 
-              <h4 className="text-center font-bonobo text-xl capitalize">
+              <h4 className="text-center font-rock-n-roll-one text-2xl capitalize">
                 {group?.name}
               </h4>
             </div>
 
-            <h4 className="text-center font-bonobo text-lg capitalize">
+            <h4 className="text-center font-rock-n-roll-one text-lg capitalize">
               {mentee?.id} - {mentee?.name}
             </h4>
-
-            {/* <div className="flex flex-col gap-2">
-              <p className="text-center font-bonobo capitalize leading-5">
-                {group?.mentor.name.toLowerCase()}
-              </p>
-            </div> */}
           </div>
 
-          <div className="absolute -bottom-10 left-0 right-0 -z-10 flex justify-center">
+          <div className="relative flex flex-col gap-2 rounded-md border border-neutral-50/75 bg-primary-800/75 p-3">
+            <h4 className="pb-4 font-rock-n-roll-one text-lg capitalize leading-5">
+              {group?.mentor.name.toLowerCase()}
+            </h4>
+
+            <Separator
+              pathClassName="fill-neutral-50/20"
+              className="absolute left-0 top-7 w-full"
+            />
+
+            <div className="flex gap-4">
+              <div className="flex items-center gap-2 rounded-sm bg-neutral-900/25 px-3 py-1 font-rock-n-roll-one text-sm leading-5 text-primary-300">
+                <SwordIndicator
+                  className="h-5 w-5"
+                  pathClassName="fill-primary-300"
+                />
+                <span>{group?.mentor.metadata.stats}</span>
+              </div>
+              <div className="relative flex items-center gap-2 rounded-sm bg-neutral-900/25 px-3 py-1 font-rock-n-roll-one text-sm leading-5 text-primary-50">
+                <BorderBeam
+                  size={48}
+                  duration={4}
+                  colorFrom="#7CAD35"
+                  colorTo="#5F8A26"
+                />
+                <DoubleSwordIndicator
+                  className="h-5 w-5"
+                  pathClassName="fill-primary-50"
+                />
+                <span>{group?.mentor.metadata.skill}</span>
+              </div>
+            </div>
+
+            <p className="font-bonobo text-sm leading-5 text-neutral-300">
+              {group?.mentor.metadata.description}
+            </p>
+          </div>
+
+          <div className="absolute -bottom-8 left-0 right-0 -z-10 flex justify-center">
             {group?.mentor?.image && (
               <Image
                 src={group?.mentor?.image}
                 alt={group?.mentor?.name}
-                width={300}
+                className="h-[550px] w-full object-scale-down object-bottom"
               />
             )}
           </div>
 
-          <DialogFooter>
+          <DialogFooter className="flex flex-row justify-between gap-2 md:justify-between">
             <Button
               className={cn("text-neutral-950")}
               variant="outline"
               size="icon"
+              onClick={handleShare}
             >
               <Share1Icon />
             </Button>

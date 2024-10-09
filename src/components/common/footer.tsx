@@ -56,7 +56,7 @@ export function Footer() {
 
   return (
     <footer className="relative z-10 bg-primary-800">
-      <div className="container flex flex-col gap-4 py-8 md:flex-row">
+      <div className="container flex flex-col gap-4 py-8 md:flex-row md:items-center">
         <p className="font-bonobo text-lg text-neutral-200 md:text-xl">
           Tujuan dari Mabim RPL 2024 adalah untuk membantu mahasiswa baru dalam
           mengorientasikan diri mereka terhadap lingkungan akademik, mata kuliah
@@ -64,7 +64,7 @@ export function Footer() {
           Cibiru.
         </p>
 
-        <ul className="ml-4 flex flex-col gap-y-2 border-l border-primary-600 py-3 pl-6">
+        <ul className="ml-4 flex min-w-72 flex-col gap-y-2 border-l border-primary-600 py-3 pl-6">
           {navLinks.map((link) => (
             <li key={link.name} className="overflow-hidden">
               <Link

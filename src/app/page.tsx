@@ -27,33 +27,33 @@ const tabData = [
 const sponsorMediaPartners = [
   {
     name: "PT. ABC",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
   {
     name: "PT. DEF",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
   {
     name: "PT. GHI",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
   {
     name: "PT. JKL",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
   {
     name: "PT. MNO",
-    logo: "https://placehold.co/320x100/webp",
+    logo: null,
   },
 ];
 
 const firstRow = sponsorMediaPartners.slice(0, sponsorMediaPartners.length / 2);
 const secondRow = sponsorMediaPartners.slice(sponsorMediaPartners.length / 2);
 
-const SponsorMediaPartnerCard = ({ logo }: { logo: string }) => {
+const SponsorMediaPartnerCard = ({ logo }: { logo: string | null }) => {
   return (
-    <figure className="relative aspect-video h-32 w-64 cursor-pointer overflow-hidden rounded-xl border p-4">
-      <Image fill alt="" src={logo} />
+    <figure className="relative aspect-video h-32 w-64 cursor-pointer overflow-hidden rounded-xl border bg-neutral-400 p-4">
+      {logo && <Image fill alt="" src={logo} />}
     </figure>
   );
 };
@@ -123,33 +123,35 @@ export default function HomePage() {
       <Wave className="absolute -left-8 top-[700px] rotate-180 opacity-50 sm:left-0 sm:w-full md:top-[700px]" />
 
       <div className="bg-primary-700/95 pt-96">
-        <BlurFade inView delay={0.25 * 2}>
+        <BlurFade inView delay={0.25 * 2} className="sm:container">
           <KelompokSection />
         </BlurFade>
       </div>
 
-      {/* Tabs Component */}
       <div className="bg-primary-700/95 pt-64">
         <CountdownTabs tabs={tabData} />
       </div>
 
-      {/* New Timeline Section */}
       <div className="bg-primary-700/95 pt-64">
-        <section
-          id="timeline"
-          className="relative z-10 rounded-md bg-neutral-50 md:mx-5"
-        >
-          <BorderCorner />
-          <h2 className="pt-10 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
-            TIMELINE
-          </h2>
-          <Timeline />
-        </section>
+        <BlurFade delay={0.25} inView className="sm:container">
+          <section
+            id="timeline"
+            className="relative z-10 rounded-md bg-neutral-50 px-12 py-6"
+          >
+            <BorderCorner />
+            <h2 className="pb-8 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
+              TIMELINE
+            </h2>
+
+            <Timeline />
+          </section>
+        </BlurFade>
       </div>
+
       <div className="bg-primary-700/95 pt-64">
-        <section id="faq" className="relative z-10 space-y-4 px-3">
+        <section id="faq" className="container relative z-10 space-y-4">
           <BlurFade inView delay={0.25 * 2}>
-            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50 md:text-4xl">
               FAQ
             </h2>
           </BlurFade>
@@ -159,9 +161,9 @@ export default function HomePage() {
       </div>
 
       <div className="bg-primary-700/95 pt-64">
-        <section className="relative z-10 space-y-4 px-3">
+        <section className="container relative z-10 space-y-4">
           <BlurFade inView delay={0.25 * 2}>
-            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50">
+            <h2 className="text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-50 md:text-4xl">
               SPONSOR & MEDIA PARTNER
             </h2>
           </BlurFade>

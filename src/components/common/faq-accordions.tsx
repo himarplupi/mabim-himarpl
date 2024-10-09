@@ -64,7 +64,7 @@ export function FAQAccordions() {
       }}
       type="single"
       collapsible
-      className="w-full font-bonobo"
+      className="mx-auto w-full max-w-screen-md font-bonobo"
     >
       {faqs.map((faq, index) => (
         <BlurFade key={faq.id} inView delay={0.25 * (index * 2 + 4)}>
