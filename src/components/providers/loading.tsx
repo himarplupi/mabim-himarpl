@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 export function Loading({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isSoundPlaying, setIsSoundPlaying] = useState(false);
-  const audio = new Audio("/assets/sound-bg-1.mp3"); // Initialize audio
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -17,6 +16,7 @@ export function Loading({ children }: { children: React.ReactNode }) {
   }, []);
 
   const handlePlaySound = () => {
+    const audio = new Audio("/assets/sound-bg-1.mp3");
     audio.loop = true;
     audio.volume = 0.75;
     audio.play().catch((error) => console.error("Error playing sound:", error));
