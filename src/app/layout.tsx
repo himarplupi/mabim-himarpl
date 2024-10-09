@@ -29,12 +29,12 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${fontBonobo.variable} ${fontZelda.variable} ${fontRockNRollOne.variable} ${fontSheikahComplete.variable}`}
     >
       <body className="bg-primary-500">
-        <PHProvider>
-          <Navbar />
-          <ReactLenis>
-            <Loading>{children}</Loading>
-          </ReactLenis>
-        </PHProvider>
+        <Navbar />
+        <Loading>
+          <PHProvider>
+            <ReactLenis>{children}</ReactLenis>
+          </PHProvider>
+        </Loading>
       </body>
     </html>
   );

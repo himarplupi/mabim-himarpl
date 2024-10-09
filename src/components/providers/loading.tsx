@@ -5,34 +5,62 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export function Loading({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [isSoundPlaying, setIsSoundPlaying] = useState(false);
+  const audio = new Audio("/assets/sound-bg-1.mp3"); // Initialize audio
 
   useEffect(() => {
-    // Remove the event listener and use a direct timeout instead
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
 
-    // Clean up the timer
     return () => clearTimeout(timer);
   }, []);
 
+  const handlePlaySound = () => {
+    audio.loop = true;
+    audio.volume = 0.75;
+    audio.play().catch((error) => console.error("Error playing sound:", error));
+    setIsSoundPlaying(true);
+  };
+
   return (
     <AnimatePresence mode="wait">
-      {isLoading ? (
+      {!isSoundPlaying || isLoading ? (
         <motion.div
           key="loader"
-          className="flex h-screen items-center justify-center bg-primary-500"
+          className="fixed left-0 right-0 top-0 z-[9999] flex h-screen flex-col items-center justify-center gap-y-4 bg-primary-500"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
+          onClick={handlePlaySound}
         >
           <motion.div
             className="h-32 w-32 rounded-full border-4 border-neutral-300"
-            style={{
-              borderTopColor: "rgb(10 10 10 / var(--tw-border-opacity))",
+            // style={{
+            //   borderTopColor: isLoading
+            //     ? "rgb(10 10 10 / var(--tw-border-opacity))"
+            //     : "rgb(212 212 212 / var(--tw-border-opacity)",
+            // }}
+            animate={{
+              rotate: 360,
+              borderTopColor: isLoading
+                ? "rgb(10 10 10 / var(--tw-border-opacity))"
+                : "rgb(212 212 212 / var(--tw-border-opacity)",
             }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+            transition={
+              isLoading
+                ? { duration: 1, repeat: Infinity, ease: "linear" }
+                : undefined
+            }
           />
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={!isLoading ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4 font-bonobo text-lg text-neutral-200"
+          >
+            Tekan dimana saja untuk memulai
+          </motion.div>
         </motion.div>
       ) : (
         <motion.div
