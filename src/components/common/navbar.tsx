@@ -44,7 +44,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.div // Wrap the nav div with motion.div
+    <motion.div
       className="fixed left-0 right-0 top-0 z-50 md:left-2 md:right-2 md:top-2"
       initial={{ y: -100 }} // Start position (off-screen)
       animate={{ y: 0 }} // End position (on-screen)
@@ -53,8 +53,8 @@ export function Navbar() {
         stiffness: 100,
         damping: 10,
         mass: 1,
-        delay: 0.5,
-      }} // Animation duration
+        delay: 2.5,
+      }}
     >
       <nav className="container flex items-center justify-between bg-primary-950 md:rounded-md">
         <div className="flex items-center gap-x-4 md:gap-x-6 md:py-2">

@@ -123,7 +123,7 @@ export default function HomePage() {
       <Wave className="absolute -left-8 top-[700px] rotate-180 opacity-50 sm:left-0 sm:w-full md:top-[700px]" />
 
       <div className="bg-primary-700/95 pt-96">
-        <BlurFade inView delay={0.25 * 2}>
+        <BlurFade inView delay={0.25 * 2} className="sm:container">
           <KelompokSection />
         </BlurFade>
       </div>
@@ -133,7 +133,7 @@ export default function HomePage() {
       </div>
 
       <div className="bg-primary-700/95 pt-64">
-        <div className="container">
+        <BlurFade delay={0.25} inView className="sm:container">
           <section
             id="timeline"
             className="relative z-10 rounded-md bg-neutral-50 px-12 py-6"
@@ -142,9 +142,10 @@ export default function HomePage() {
             <h2 className="pb-8 text-center font-rock-n-roll-one text-3xl font-normal leading-tight tracking-wider text-neutral-950 md:text-4xl">
               TIMELINE
             </h2>
+
             <Timeline />
           </section>
-        </div>
+        </BlurFade>
       </div>
 
       <div className="bg-primary-700/95 pt-64">
