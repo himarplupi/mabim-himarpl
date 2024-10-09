@@ -5,10 +5,6 @@ import { useLenis } from "lenis/react";
 
 const navLinks = [
   {
-    name: "Instagram",
-    href: "http://instagram.com/mabimrpl",
-  },
-  {
     name: "Booklet",
     href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/booklet.pdf",
   },
@@ -29,16 +25,20 @@ const navLinks = [
     href: "#faq",
   },
   {
-    name: "Template Nametag",
+    name: "Nametag",
     href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/template-nametag.pdf",
   },
   {
-    name: "Template Surat Keterangan",
-    href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/template-sk.pdf",
+    name: "Surat Keterangan Izin",
+    href: "https://s.id/surat-keterangan-izin-mabim-rpl-2024",
   },
   {
     name: "Form Pelaporan Panitia",
-    href: "https://google.com",
+    href: "https://s.id/form-pelaporan-panitia-mabim-rpl-2024",
+  },
+  {
+    name: "Instagram Mabim RPL",
+    href: "http://instagram.com/mabimrpl",
   },
 ];
 
