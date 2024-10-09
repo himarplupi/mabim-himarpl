@@ -32,7 +32,7 @@ import { checkIfBrowserSupported, takeScreenshot } from "@xata.io/screenshot";
 
 export function KelompokSection() {
   const lenis = useLenis();
-  const [name, setName] = useState("Sandy Saputra");
+  const [name, setName] = useState("");
   const [mentee, setMentee] = useState<Mentee | undefined>();
   const [group, setGroup] = useState<GroupMabim | undefined>();
   const [isNotFound, setIsNotFound] = useState(false);
@@ -135,10 +135,14 @@ export function KelompokSection() {
         <Button
           disabled={name.length === 0}
           className="mx-auto w-full max-w-64"
-          onClick={handleSearch}
+          // onClick={handleSearch}
         >
           CARI KELOMPOK
         </Button>
+        <p className="text-xs md:text-sm">
+          *Kamu baru dapat melihat kelompokmu setelah Technical Meeting,
+          ditunggu ya!
+        </p>
       </div>
 
       {/* Not Found Dialog */}

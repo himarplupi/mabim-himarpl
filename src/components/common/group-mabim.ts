@@ -111,7 +111,56 @@ export const groupMabim: GroupMabim[] = [
           "Hati-hati dengan orang ini ya! Harap Waspada! Oke singkat saja!, Paham!",
       },
     },
-    mentees: [],
+    mentees: [
+      {
+        id: "LX01",
+        name: "Muhammad Raihan Ananditha",
+      },
+      {
+        id: "LX02",
+        name: "Naufal Zahran Fadhlurrohman",
+      },
+      {
+        id: "LX03",
+        name: "Sina Pijar Sahmura",
+      },
+      {
+        id: "LX04",
+        name: "Nugra Hasahatan Lubis",
+      },
+      {
+        id: "LX05",
+        name: "Marwa Aulia Lukman",
+      },
+      {
+        id: "LX06",
+        name: "Zahran Faiz Salman",
+      },
+      {
+        id: "LX07",
+        name: "Mirachel Cindejona",
+      },
+      {
+        id: "LX08",
+        name: "DZAKY ALIFIANSYAH RAMDANI",
+      },
+      {
+        id: "LX09",
+        name: "Tariq Ahmad",
+      },
+      {
+        id: "LX10",
+        name: "Muhammad Akmal Romdhoni",
+      },
+      {
+        id: "LX11",
+        name: "Moch Yussar Rizky",
+      },
+      {
+        id: "LX11",
+        name: "Moch. Yussar Rizky",
+      },
+    ],
   },
   {
     id: 3,
@@ -128,7 +177,48 @@ export const groupMabim: GroupMabim[] = [
           "Aku adalah intel terpintar dari bulan yang siap menemani kalian! As blue as the sky, aku akan menemani kalian selama MABIM RPL 2024!",
       },
     },
-    mentees: [],
+    mentees: [
+      {
+        id: "NB01",
+        name: "Ananda Alya Puteri Munggaran",
+      },
+      {
+        id: "NB02",
+        name: "Najwa Salsabila Putri",
+      },
+      {
+        id: "NB03",
+        name: "Rasya Fadil Arfiano",
+      },
+      {
+        id: "NB04",
+        name: "Rifdah Mahirah",
+      },
+      {
+        id: "NB05",
+        name: "Luthfil Hadi Surya Pangestu",
+      },
+      {
+        id: "NB06",
+        name: "Ahmad Fuad Mubarak",
+      },
+      {
+        id: "NB07",
+        name: "Ahmad Zaelani",
+      },
+      {
+        id: "NB08",
+        name: "Rafi Ghazy Athallah",
+      },
+      {
+        id: "NB09",
+        name: "Hasbi Khoirul Fikri Saputra ",
+      },
+      {
+        id: "NB10",
+        name: "Fajri Bagaskara Budi",
+      },
+    ],
   },
   {
     id: 4,
@@ -145,7 +235,48 @@ export const groupMabim: GroupMabim[] = [
           "Tersimpan dalam keheningan yang tertarik akan petualangan, happy to be good listener with you! Sampai ketemu di MABIM RPL 2024 ya!",
       },
     },
-    mentees: [],
+    mentees: [
+      {
+        id: "ZN01",
+        name: "Raden Hamizan Rizky Kusuma",
+      },
+      {
+        id: "ZN02",
+        name: "Salsabila Restu Adriani",
+      },
+      {
+        id: "ZN03",
+        name: "Wisnu Firmansyah Handjoyo",
+      },
+      {
+        id: "ZN04",
+        name: "Nabila Ayla Putri",
+      },
+      {
+        id: "ZN05",
+        name: "Muhamad Iqbal Ramadhan",
+      },
+      {
+        id: "ZN06",
+        name: "Nabil Rizky Ramadhan Setiawan",
+      },
+      {
+        id: "ZN07",
+        name: "Harits Nur Allam Muhammad",
+      },
+      {
+        id: "ZN08",
+        name: "siti masdariah",
+      },
+      {
+        id: "ZN09",
+        name: "Anaqi Ahza Nashrullah",
+      },
+      {
+        id: "ZN10",
+        name: "Fikri Raditya Hutama",
+      },
+    ],
   },
   {
     id: 5,
@@ -162,7 +293,48 @@ export const groupMabim: GroupMabim[] = [
           "Selalu tertarik dengan angka dan logika, aku sering kali menjabat sebagai sekretaris. Tapi kali ini aku siap menjadi navigator kalian di MABIM RPL 2024",
       },
     },
-    mentees: [],
+    mentees: [
+      {
+        id: "AR01",
+        name: "Rafi Islami Pasha Dini Hari Putra",
+      },
+      {
+        id: "AR02",
+        name: "Febriansyah Nugraha",
+      },
+      {
+        id: "AR03",
+        name: "Vina Nur Nisa",
+      },
+      {
+        id: "AR04",
+        name: "Harmoni Natanael Simatupang",
+      },
+      {
+        id: "AR05",
+        name: "Ihsan Fathin Mohammed",
+      },
+      {
+        id: "AR06",
+        name: "Dwi Raysah Anandifa Kautsar",
+      },
+      {
+        id: "AR07",
+        name: "Ikhsanul Richi Fauzi",
+      },
+      {
+        id: "AR08",
+        name: "Resti Fujianti",
+      },
+      {
+        id: "AR09",
+        name: "Dwi Cahyo Wibisono",
+      },
+      {
+        id: "AR10",
+        name: "Louisy Novina P",
+      },
+    ],
   },
   {
     id: 6,
@@ -179,7 +351,48 @@ export const groupMabim: GroupMabim[] = [
           "Aku adalah kadept Advokastra dan juga perwakilan RPL sebagai Putra Cibiru. Aku bakal menemani akang/teteh sebagai mentor!",
       },
     },
-    mentees: [],
+    mentees: [
+      {
+        id: "NX01",
+        name: "Raissa Fasya Sabila",
+      },
+      {
+        id: "NX02",
+        name: "Kautsar Muhammad Mizan",
+      },
+      {
+        id: "NX03",
+        name: "Zaky Rizzan Zain",
+      },
+      {
+        id: "NX04",
+        name: "Ikbal Miftahudin",
+      },
+      {
+        id: "NX05",
+        name: "Muhammad Nawwaf Yazid Ikromi",
+      },
+      {
+        id: "NX06",
+        name: "Vasya Thabarani",
+      },
+      {
+        id: "NX07",
+        name: "Mohamad Firdiansyah",
+      },
+      {
+        id: "NX08",
+        name: "Mukhammad Vicky",
+      },
+      {
+        id: "NX09",
+        name: "Fathurrachman Muhammad Dzakiy",
+      },
+      {
+        id: "NX10",
+        name: "Dzaky Julian Putranto",
+      },
+    ],
   },
   {
     id: 7,
@@ -196,7 +409,48 @@ export const groupMabim: GroupMabim[] = [
           "Anti manusia dan matahari, subjek ini mencerminkan sisi stereotipikal mahasiswa RPL. Namun sepertinya topik game dan matematika dapat mencairkan suasana ya?",
       },
     },
-    mentees: [],
+    mentees: [
+      {
+        id: "NI01",
+        name: "Muhammad Haikal Akbar",
+      },
+      {
+        id: "NI02",
+        name: "Muhammad Ihsan Ansori",
+      },
+      {
+        id: "NI03",
+        name: "Aletha Zoya Fachira",
+      },
+      {
+        id: "NI04",
+        name: "Azka Fadhlan Ramadhan",
+      },
+      {
+        id: "NI05",
+        name: "Hanifi Raditya Nasution",
+      },
+      {
+        id: "NI06",
+        name: "Ahmad Hidayat",
+      },
+      {
+        id: "NI07",
+        name: "Cahya Abdul Aziz",
+      },
+      {
+        id: "NI08",
+        name: "Ilyassa Putra",
+      },
+      {
+        id: "NI09",
+        name: "Mahesa Syawal Abdurahman",
+      },
+      {
+        id: "NI10",
+        name: "Siti Amalia Putri",
+      },
+    ],
   },
   {
     id: 8,
@@ -213,7 +467,48 @@ export const groupMabim: GroupMabim[] = [
           "You'll Never Walk Alone! Sampai ketemu di MABIMRPL 2024 ya!",
       },
     },
-    mentees: [],
+    mentees: [
+      {
+        id: "KNO01",
+        name: "Rifky Muafy",
+      },
+      {
+        id: "KNO02",
+        name: "Salsabila Rahma Ramadhania",
+      },
+      {
+        id: "KNO03",
+        name: "Haidar Atqiya Rahman",
+      },
+      {
+        id: "KNO04",
+        name: "Muhammad Zaidan Rahman",
+      },
+      {
+        id: "KNO05",
+        name: "Muhammad Fadil Tallei",
+      },
+      {
+        id: "KNO06",
+        name: "Nandana Rafi Ardika",
+      },
+      {
+        id: "KNO07",
+        name: "Muhamad Ilham Akbar Porindo Rahaputra",
+      },
+      {
+        id: "KNO08",
+        name: "Hafizh iltizam ilham",
+      },
+      {
+        id: "KNO09",
+        name: "Ica Apriyanti Rahayu",
+      },
+      {
+        id: "KNO10",
+        name: "Saifulloh Fattah Bintoro",
+      },
+    ],
   },
   {
     id: 9,
@@ -230,6 +525,47 @@ export const groupMabim: GroupMabim[] = [
           "Halo! Aku Ann, mentor kelompok Zephyr.  Aku siap mendampingi kalian di petualangan MABIM RPL 2024!",
       },
     },
-    mentees: [],
+    mentees: [
+      {
+        id: "ZR01",
+        name: "Regina Nur Fadhilah",
+      },
+      {
+        id: "ZR02",
+        name: "Erik Klaus Keifas Kalalo",
+      },
+      {
+        id: "ZR03",
+        name: "Raihan Fauzi Rakhman",
+      },
+      {
+        id: "ZR04",
+        name: "Natasya Ramadhani",
+      },
+      {
+        id: "ZR05",
+        name: "Mursyid Daniswara",
+      },
+      {
+        id: "ZR06",
+        name: "Muhamad Ikshan Suherman",
+      },
+      {
+        id: "ZR07",
+        name: "Aziza Putri Amelia",
+      },
+      {
+        id: "ZR08",
+        name: "Rafli Ahmad Fauzi",
+      },
+      {
+        id: "ZR09",
+        name: "Malyhah Azizah",
+      },
+      {
+        id: "ZR10",
+        name: "Bintang Kurniawan",
+      },
+    ],
   },
 ];
