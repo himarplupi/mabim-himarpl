@@ -1,12 +1,16 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
+import LogoAlloBank from "@/assets/sponsors/LogoAlloBank.png";
+import LogoKahf from "@/assets/sponsors/LogoKahf.png";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Marquee } from "@/components/ui/marquee";
-import LogoAlloBank from "@/assets/sponsors/LogoAlloBank.png";
-import LogoKahf from "@/assets/sponsors/LogoKahf.png"
 
+type SponsorMediaPartner = {
+  name: string;
+  logo: StaticImageData | null;
+};
 
-const sponsorMediaPartners = [
+const sponsorMediaPartners: SponsorMediaPartner[] = [
   {
     name: "PT. PT Paragon Technology and Innovation",
     logo: LogoKahf,
@@ -32,7 +36,11 @@ const sponsorMediaPartners = [
 const firstRow = sponsorMediaPartners.slice(0, sponsorMediaPartners.length / 2);
 const secondRow = sponsorMediaPartners.slice(sponsorMediaPartners.length / 2);
 
-const SponsorMediaPartnerCard = ({ logo }: { logo: string | null }) => {
+const SponsorMediaPartnerCard = ({
+  logo,
+}: {
+  logo: StaticImageData | null;
+}) => {
   return (
     <figure className="relative aspect-video h-32 w-64 cursor-pointer overflow-hidden rounded-xl border bg-neutral-400 p-4">
       {logo && <Image fill alt="" src={logo} />}
@@ -54,7 +62,7 @@ export function SponsorMediaSection() {
           {firstRow.map((sponsorMediaPartner) => (
             <SponsorMediaPartnerCard
               key={sponsorMediaPartner.name}
-              {...sponsorMediaPartner}
+              logo={sponsorMediaPartner.logo}
             />
           ))}
         </Marquee>
@@ -64,7 +72,7 @@ export function SponsorMediaSection() {
           {secondRow.map((sponsorMediaPartner) => (
             <SponsorMediaPartnerCard
               key={sponsorMediaPartner.name}
-              {...sponsorMediaPartner}
+              logo={sponsorMediaPartner.logo}
             />
           ))}
         </Marquee>
