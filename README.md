@@ -30,11 +30,12 @@ pnpm run dev
 ```
 
 ## Kontribusi
+Cek panduan kontribusi selengkapnya [di sini][Panduan Kontribusi].
 
 Proyek ini mengadopsi [Kode Etik][] HIMARPL.
 
 > \[!NOTE]\
-> Kami merekomendasikan membaca semua Tautan Relevan di bawah ini sebelum melakukan perubahan kode; Termasuk perubahan Dependency, perubahan Konten, dan perubahan Kode.
+> Kami merekomendasikan  semua Tautan Relevan di bawah ini sebelum melakukan perubahan kode; Termasuk perubahan Dependency, perubahan Konten, dan perubahan Kode.
 
 ### Deployment
 
