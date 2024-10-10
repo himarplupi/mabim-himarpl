@@ -73,7 +73,7 @@ export function CountdownTabs() {
                     whileTap={{ scale: 0.95 }} // Optional tap effect
                     animate={{
                       backgroundColor:
-                        activeTab === index ? "#5F8A26" : "transparent",
+                        activeTab === index ? "#5F8A26" : "#5f8a2600",
                       color: activeTab === index ? "#fafafa" : "#a1a1aa",
                     }}
                     transition={{

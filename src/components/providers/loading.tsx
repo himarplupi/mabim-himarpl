@@ -60,9 +60,7 @@ export function Loading({ children }: { children: React.ReactNode }) {
               className="h-32 w-32 rounded-full border-4 border-neutral-300"
               animate={{
                 rotate: 360,
-                borderTopColor: isLoading
-                  ? "rgb(10 10 10 / var(--tw-border-opacity))"
-                  : "rgb(212 212 212 / var(--tw-border-opacity)",
+                borderTopColor: isLoading ? "#525252" : "#d4d4d4",
               }}
               transition={
                 isLoading
