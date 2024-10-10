@@ -2,15 +2,18 @@ import Image from "next/image";
 
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Marquee } from "@/components/ui/marquee";
+import LogoAlloBank from "@/assets/sponsors/LogoAlloBank.png";
+import LogoKahf from "@/assets/sponsors/LogoKahf.png"
+
 
 const sponsorMediaPartners = [
   {
-    name: "PT. ABC",
-    logo: null,
+    name: "PT. PT Paragon Technology and Innovation",
+    logo: LogoKahf,
   },
   {
-    name: "PT. DEF",
-    logo: null,
+    name: "PT. PT Allo Bank Indonesia Tbk",
+    logo: LogoAlloBank,
   },
   {
     name: "PT. GHI",
