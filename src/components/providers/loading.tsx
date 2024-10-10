@@ -6,6 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 export function Loading({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isSoundPlaying, setIsSoundPlaying] = useState(false);
+  const [soundBg1, setSoundBg1] = useState<HTMLAudioElement | null>(null);
+  const [soundBg2, setSoundBg2] = useState<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -15,12 +17,31 @@ export function Loading({ children }: { children: React.ReactNode }) {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (soundBg1 && soundBg2) {
+      const playSequence = () => {
+        soundBg1.volume = 0.75;
+        void soundBg1.play();
+
+        soundBg1.onended = () => {
+          soundBg2.volume = 0.75;
+          void soundBg2.play();
+
+          soundBg2.onended = playSequence;
+        };
+      };
+
+      playSequence();
+      setIsSoundPlaying(true);
+    }
+  }, [soundBg1, soundBg2]);
+
   const handlePlaySound = () => {
     const audio = new Audio("/assets/sound-bg-1.mp3");
-    audio.loop = true;
-    audio.volume = 0.75;
-    audio.play().catch((error) => console.error("Error playing sound:", error));
-    setIsSoundPlaying(true);
+    const audio2 = new Audio("/assets/sound-bg-2.m4a");
+
+    setSoundBg1(audio);
+    setSoundBg2(audio2);
   };
 
   return (
