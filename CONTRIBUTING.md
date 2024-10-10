@@ -12,7 +12,7 @@ Terima kasih atas minat Anda untuk berkontribusi pada Website Mabim RPL 2024. Se
 
 ## Kontribusi
 
-Setiap individu dipersilakan untuk berkontribusi pada Website Mabim RPL 2024. Repositori ini saat ini memiliki satu jenis persona kontribusi:
+Setiap individu dipersilakan untuk berkontribusi pada Website Mabim RPL 2024. Repositori ini saat ini memiliki dua jenis persona kontribusi:
 
 - **Kontributor** adalah setiap individu yang membuat isu/PR, mengomentari isu/PR, atau berkontribusi dengan cara lain.
 
