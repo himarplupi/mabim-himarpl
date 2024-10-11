@@ -5,6 +5,7 @@ import LogoAlloBank from "@/assets/sponsors/LogoAlloBank.png";
 import LogoKahf from "@/assets/sponsors/LogoKahf.png"
 import LogoRuru from "@/assets/sponsors/LogoRuru.jpg"
 import LogoMenyala from "@/assets/sponsors/LogoMenyala.png"
+import LogoDicoding from "@/assets/sponsors/LogoDicoding.png"
 
 type SponsorMediaPartner = {
   name: string;
@@ -21,6 +22,10 @@ const sponsorMediaPartners: SponsorMediaPartner[] = [
     logo: LogoAlloBank,
   },
   {
+    name: "PT Dicoding Akademi Indonesia",
+    logo: LogoDicoding,
+  },
+  {
     name: "Menyala by OCBC",
     logo: LogoRuru,
   },
@@ -28,6 +33,7 @@ const sponsorMediaPartners: SponsorMediaPartner[] = [
     name: "Ruru Snack",
     logo: LogoMenyala,
   },
+  
 ];
 
 const firstRow = sponsorMediaPartners.slice(0, sponsorMediaPartners.length / 2);
@@ -35,12 +41,12 @@ const secondRow = sponsorMediaPartners.slice(sponsorMediaPartners.length / 2);
 
 const SponsorMediaPartnerCard = ({ logo }: { logo: StaticImageData | null }) => {
   return (
-    <figure className="relative aspect-video h full h-32 w-full w-auto cursor-pointer object-contain object-center overflow-hidden flex items-center justify-center rounded-xl p-4">
+    <figure className="relative aspect-video h-36 w-full w-auto cursor-pointer object-center overflow-hidden flex items-center justify-center rounded-xl p-4">
       {logo && 
       <Image 
         src={logo}
         alt="Sponsor or Media Partner Logo"
-        style={{ maxHeight: '150%', maxWidth: '100%' }}
+        style={{ maxHeight: '100%', maxWidth: '100%' }}
       />}
     </figure>
   );
