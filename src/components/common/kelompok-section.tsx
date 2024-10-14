@@ -130,7 +130,6 @@ export function KelompokSection() {
                   }
                 }
               }}
-              disabled
               className="border-neutral-50/40 bg-neutral-900 text-neutral-200"
             />
           </div>
@@ -138,7 +137,7 @@ export function KelompokSection() {
           <Button
             disabled={name.length === 0}
             className="mx-auto w-full max-w-64"
-            // onClick={handleSearch}
+            onClick={handleSearch}
           >
             CARI KELOMPOK
           </Button>
