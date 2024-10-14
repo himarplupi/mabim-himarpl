@@ -15,24 +15,24 @@ type SponsorMediaPartner = {
 
 const sponsorMediaPartners: SponsorMediaPartner[] = [
   {
-    name: "PT Paragon Technology and Innovation",
-    logo: LogoKahf,
+    name: "PT Dicoding Akademi Indonesia",
+    logo: LogoDicoding,
   },
   {
     name: "PT Allo Bank Indonesia Tbk",
     logo: LogoAlloBank,
   },
   {
-    name: "PT Dicoding Akademi Indonesia",
-    logo: LogoDicoding,
+    name: "Ruru Snack",
+    logo: LogoMenyala,
+  },
+  {
+    name: "PT Paragon Technology and Innovation",
+    logo: LogoKahf,
   },
   {
     name: "Menyala by OCBC",
     logo: LogoRuru,
-  },
-  {
-    name: "Ruru Snack",
-    logo: LogoMenyala,
   },
 ];
 

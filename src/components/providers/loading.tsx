@@ -18,6 +18,7 @@ export function Loading({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
+    if (isSoundPlaying) return;
     if (soundBg1 && soundBg2) {
       const playSequence = () => {
         soundBg1.volume = 0.75;
@@ -34,6 +35,8 @@ export function Loading({ children }: { children: React.ReactNode }) {
       playSequence();
       setIsSoundPlaying(true);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [soundBg1, soundBg2]);
 
   const handlePlaySound = () => {
@@ -60,18 +63,22 @@ export function Loading({ children }: { children: React.ReactNode }) {
               className="h-32 w-32 rounded-full border-4 border-neutral-300"
               animate={{
                 rotate: 360,
+              }}
+              transition={{
+                rotate: {
+                  duration: 1,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+              style={{
                 borderTopColor: isLoading ? "#525252" : "#d4d4d4",
               }}
-              transition={
-                isLoading
-                  ? { duration: 1, repeat: Infinity, ease: "linear" }
-                  : undefined
-              }
             />
 
             <motion.div
               initial={{ opacity: 0 }}
-              animate={!isLoading ? { opacity: 1 } : { opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
               className="mb-4 font-bonobo text-lg text-neutral-200"
             >
