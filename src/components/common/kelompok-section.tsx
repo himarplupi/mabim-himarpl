@@ -141,10 +141,6 @@ export function KelompokSection() {
           >
             CARI KELOMPOK
           </Button>
-          <p className="text-xs md:text-sm">
-            *Kamu baru dapat melihat kelompokmu setelah Technical Meeting,
-            ditunggu ya!
-          </p>
         </div>
 
         {/* Not Found Dialog */}
