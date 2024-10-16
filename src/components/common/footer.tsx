@@ -3,17 +3,17 @@
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 
+import { cn } from "@/lib/utils";
+
 const navLinks = [
   {
-    name: "Instagram",
-    href: "http://instagram.com/mabimrpl",
-  },
-  {
     name: "Booklet",
+    disabled: true,
     href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/booklet.pdf",
   },
   {
     name: "Twibbon",
+    disabled: true,
     href: "https://drive.google.com",
   },
   {
@@ -29,16 +29,21 @@ const navLinks = [
     href: "#faq",
   },
   {
-    name: "Template Nametag",
+    name: "Nametag",
+    disabled: true,
     href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/template-nametag.pdf",
   },
   {
-    name: "Template Surat Keterangan",
-    href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/template-sk.pdf",
+    name: "Surat Keterangan Izin",
+    href: "https://s.id/surat-keterangan-izin-mabim-rpl-2024",
   },
   {
     name: "Form Pelaporan Panitia",
-    href: "https://google.com",
+    href: "https://s.id/form-pelaporan-panitia-mabim-rpl-2024",
+  },
+  {
+    name: "Instagram Mabim RPL",
+    href: "http://instagram.com/mabimrpl",
   },
 ];
 
@@ -68,10 +73,22 @@ export function Footer() {
           {navLinks.map((link) => (
             <li key={link.name} className="overflow-hidden">
               <Link
-                className="inline-block font-bonobo text-lg leading-5 text-primary-200 hover:underline"
+                className={cn(
+                  "inline-block font-bonobo text-lg leading-5 text-primary-200 hover:underline",
+                  {
+                    "pointer-events-none opacity-50 hover:no-underline":
+                      link.disabled,
+                  },
+                )}
                 href={link.href}
                 target={isExternalLink(link.href) ? "_blank" : undefined}
-                onClick={(e) => handleLinkClick(link.href, e)}
+                onClick={(e) => {
+                  if (link.disabled) {
+                    e.preventDefault();
+                    return;
+                  }
+                  handleLinkClick(link.href, e);
+                }}
               >
                 {link.name}
               </Link>

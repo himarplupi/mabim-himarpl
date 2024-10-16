@@ -1,0 +1,37 @@
+name: Next.js Continuous Integration
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  pull_request_target:
+    branches: [main]
+
+jobs:
+  Code-Quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Run Linting
+        run: pnpm run lint
+
+  Deploy-Preview:
+    needs: Code-Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --token=${{ secrets.VERCEL_TOKEN }}

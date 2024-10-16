@@ -102,7 +102,7 @@ export const groupMabim: GroupMabim[] = [
     name: "Linux",
     mentor: {
       name: "Kang Asep Nadhirin",
-      phone: "+628122350650962",
+      phone: "+6281223506509",
       image: imgLinux,
       metadata: {
         skill: "Temen Sammy",
@@ -142,7 +142,7 @@ export const groupMabim: GroupMabim[] = [
       },
       {
         id: "LX08",
-        name: "DZAKY ALIFIANSYAH RAMDANI",
+        name: "Dzaky Alifiansyah Ramdani",
       },
       {
         id: "LX09",
@@ -168,7 +168,7 @@ export const groupMabim: GroupMabim[] = [
     name: "Nebula",
     mentor: {
       name: "Teh Laras",
-      phone: "+628532247715362",
+      phone: "+6285322477153",
       image: imgNebula,
       metadata: {
         skill: "Cuan",
@@ -212,7 +212,7 @@ export const groupMabim: GroupMabim[] = [
       },
       {
         id: "NB09",
-        name: "Hasbi Khoirul Fikri Saputra ",
+        name: "Hasbi Khoirul Fikri Saputra",
       },
       {
         id: "NB10",
@@ -226,7 +226,7 @@ export const groupMabim: GroupMabim[] = [
     name: "Zenith",
     mentor: {
       name: "Teh Nurul Fauziah",
-      phone: "+6289541301505562",
+      phone: "+62895413015055",
       image: imgZenith,
       metadata: {
         skill: "Listener",
@@ -266,7 +266,7 @@ export const groupMabim: GroupMabim[] = [
       },
       {
         id: "ZN08",
-        name: "siti masdariah",
+        name: "Siti Masdariah",
       },
       {
         id: "ZN09",
@@ -284,7 +284,7 @@ export const groupMabim: GroupMabim[] = [
     name: "Aurora",
     mentor: {
       name: "Teh Maryam Silva",
-      phone: "+6289538327745362",
+      phone: "+62895383277453",
       image: imgAurora,
       metadata: {
         skill: "Menghitung",
@@ -342,7 +342,7 @@ export const groupMabim: GroupMabim[] = [
     name: "Nexus",
     mentor: {
       name: "Kang Bagas Adhi Nugraha",
-      phone: "+628588572502762",
+      phone: "+6285885725027",
       image: imgNexus,
       metadata: {
         skill: "Yapping",
@@ -400,7 +400,7 @@ export const groupMabim: GroupMabim[] = [
     name: "Nix",
     mentor: {
       name: "Teh Zahrah Nisrini Mumtaz",
-      phone: "+628560970919462",
+      phone: "+6285609709194",
       image: imgNix,
       metadata: {
         skill: "Strong",
@@ -458,7 +458,7 @@ export const groupMabim: GroupMabim[] = [
     name: "Knoppix",
     mentor: {
       name: "Kang Aldini Hegle",
-      phone: "+628132421606062",
+      phone: "+6281324216060",
       image: imgKnoppix,
       metadata: {
         skill: "Basket",
@@ -555,12 +555,20 @@ export const groupMabim: GroupMabim[] = [
         name: "Aziza Putri Amelia",
       },
       {
+        id: "ZR07",
+        name: "Putri Amelia",
+      },
+      {
         id: "ZR08",
         name: "Rafli Ahmad Fauzi",
       },
       {
         id: "ZR09",
         name: "Malyhah Azizah",
+      },
+      {
+        id: "ZR09",
+        name: "Malyhah H",
       },
       {
         id: "ZR10",
