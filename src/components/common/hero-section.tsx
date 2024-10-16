@@ -34,10 +34,10 @@ export function HeroSection() {
         inView
         className="mt-4 flex w-full flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6"
       >
-        <Button variant="outline" className="w-full sm:w-52">
+        <Button disabled variant="outline" className="w-full sm:w-52">
           BOOKLET
         </Button>
-        <Button variant="outline" className="w-full sm:w-52">
+        <Button disabled variant="outline" className="w-full sm:w-52">
           TWIBBON
         </Button>
       </BlurFade>
