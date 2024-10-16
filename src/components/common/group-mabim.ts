@@ -142,7 +142,7 @@ export const groupMabim: GroupMabim[] = [
       },
       {
         id: "LX08",
-        name: "DZAKY ALIFIANSYAH RAMDANI",
+        name: "Dzaky Alifiansyah Ramdani",
       },
       {
         id: "LX09",
@@ -266,7 +266,7 @@ export const groupMabim: GroupMabim[] = [
       },
       {
         id: "ZN08",
-        name: "siti masdariah",
+        name: "Siti Masdariah",
       },
       {
         id: "ZN09",
@@ -555,12 +555,20 @@ export const groupMabim: GroupMabim[] = [
         name: "Aziza Putri Amelia",
       },
       {
+        id: "ZR07",
+        name: "Putri Amelia",
+      },
+      {
         id: "ZR08",
         name: "Rafli Ahmad Fauzi",
       },
       {
         id: "ZR09",
         name: "Malyhah Azizah",
+      },
+      {
+        id: "ZR09",
+        name: "Malyhah H",
       },
       {
         id: "ZR10",
