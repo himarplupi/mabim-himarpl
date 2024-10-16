@@ -162,7 +162,7 @@ export function KelompokSection() {
             </div>
             <DialogFooter>
               <Link
-                href="https://wa.me/+628588572502762"
+                href="https://wa.me/+6285885725027"
                 target="_blank"
                 className={cn(buttonVariants())}
               >
