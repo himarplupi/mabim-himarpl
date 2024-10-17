@@ -13,8 +13,7 @@ const navLinks = [
   },
   {
     name: "Twibbon",
-    disabled: true,
-    href: "https://drive.google.com",
+    href: "https://s.id/TwibbonMABIMRPL2024",
   },
   {
     name: "Lihat Kelompok",
