@@ -24,9 +24,9 @@ const faqs = [
   },
   {
     id: "item-2",
-    question: "Apa Singkatan dari Mabim?",
+    question: "Apa Kepanjangan dari Mabim?",
     answer:
-      "Singkatan dari Mabim adalah Masa Bimbingan. Jadi, Mabim RPL artinya Masa Bimbingan yang dilaksanakan untuk mahasiswa baru dengan Prodi RPL atau Rekayasa Perangkat Lunak",
+      "Kepanjangan dari Mabim adalah Masa Bimbingan. Jadi, Mabim RPL artinya Masa Bimbingan yang dilaksanakan untuk mahasiswa baru dengan Prodi RPL atau Rekayasa Perangkat Lunak",
   },
   {
     id: "item-3",

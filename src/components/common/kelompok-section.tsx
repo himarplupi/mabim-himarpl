@@ -130,7 +130,6 @@ export function KelompokSection() {
                   }
                 }
               }}
-              disabled
               className="border-neutral-50/40 bg-neutral-900 text-neutral-200"
             />
           </div>
@@ -138,14 +137,10 @@ export function KelompokSection() {
           <Button
             disabled={name.length === 0}
             className="mx-auto w-full max-w-64"
-            // onClick={handleSearch}
+            onClick={handleSearch}
           >
             CARI KELOMPOK
           </Button>
-          <p className="text-xs md:text-sm">
-            *Kamu baru dapat melihat kelompokmu setelah Technical Meeting,
-            ditunggu ya!
-          </p>
         </div>
 
         {/* Not Found Dialog */}
@@ -167,7 +162,7 @@ export function KelompokSection() {
             </div>
             <DialogFooter>
               <Link
-                href="https://wa.me/+628588572502762"
+                href="https://wa.me/+6285885725027"
                 target="_blank"
                 className={cn(buttonVariants())}
               >

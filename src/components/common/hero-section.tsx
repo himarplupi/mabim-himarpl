@@ -1,9 +1,15 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 import { Separator } from "@/components/ornament/separator";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { SparklesText } from "@/components/ui/sparkles-text";
 
 export function HeroSection() {
+  const router = useRouter();
+
   return (
     <section className="container relative z-10 flex min-h-screen w-full flex-col items-center justify-center gap-y-3">
       <BlurFade delay={0.25} inView>
@@ -34,10 +40,15 @@ export function HeroSection() {
         inView
         className="mt-4 flex w-full flex-col gap-3 sm:flex-row sm:justify-center sm:gap-6"
       >
-        <Button variant="outline" className="w-full sm:w-52">
+        <Button disabled variant="outline" className="w-full sm:w-52">
           BOOKLET
         </Button>
-        <Button variant="outline" className="w-full sm:w-52">
+
+        <Button
+          onClick={() => router.push("https://s.id/TwibbonMABIMRPL2024")}
+          variant="outline"
+          className="w-full sm:w-52"
+        >
           TWIBBON
         </Button>
       </BlurFade>

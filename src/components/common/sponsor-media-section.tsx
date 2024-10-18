@@ -1,11 +1,13 @@
 import Image, { type StaticImageData } from "next/image";
+
+import LogoAlloBank from "@/assets/sponsors/LogoAlloBank.png";
+import LogoDicoding from "@/assets/sponsors/LogoDicoding.png";
+import LogoKahf from "@/assets/sponsors/LogoKahf.png";
+import LogoMenyala from "@/assets/sponsors/LogoMenyala.png";
+import LogoRuru from "@/assets/sponsors/LogoRuru.jpg";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Marquee } from "@/components/ui/marquee";
-import LogoAlloBank from "@/assets/sponsors/LogoAlloBank.png";
-import LogoKahf from "@/assets/sponsors/LogoKahf.png"
-import LogoRuru from "@/assets/sponsors/LogoRuru.jpg"
-import LogoMenyala from "@/assets/sponsors/LogoMenyala.png"
-import LogoDicoding from "@/assets/sponsors/LogoDicoding.png"
+import { cn } from "@/lib/utils";
 
 type SponsorMediaPartner = {
   name: string;
@@ -14,40 +16,51 @@ type SponsorMediaPartner = {
 
 const sponsorMediaPartners: SponsorMediaPartner[] = [
   {
-    name: "PT Paragon Technology and Innovation",
-    logo: LogoKahf,
+    name: "PT Dicoding Akademi Indonesia",
+    logo: LogoDicoding,
   },
   {
     name: "PT Allo Bank Indonesia Tbk",
     logo: LogoAlloBank,
   },
   {
-    name: "PT Dicoding Akademi Indonesia",
-    logo: LogoDicoding,
-  },
-  {
-    name: "Menyala by OCBC",
+    name: "Ruru Snack",
     logo: LogoRuru,
   },
   {
-    name: "Ruru Snack",
+    name: "PT Paragon Technology and Innovation",
+    logo: LogoKahf,
+  },
+  {
+    name: "Menyala by OCBC",
     logo: LogoMenyala,
   },
-  
 ];
 
-const firstRow = sponsorMediaPartners.slice(0, sponsorMediaPartners.length / 2);
-const secondRow = sponsorMediaPartners.slice(sponsorMediaPartners.length / 2);
+const firstRow = sponsorMediaPartners.slice(0, 3);
+const secondRow = sponsorMediaPartners.slice(3);
 
-const SponsorMediaPartnerCard = ({ logo }: { logo: StaticImageData | null }) => {
+const SponsorMediaPartnerCard = ({
+  logo,
+  size = "md",
+}: {
+  logo: StaticImageData | null;
+  size?: "md" | "lg";
+}) => {
   return (
-    <figure className="relative aspect-video h-36 w-full w-auto cursor-pointer object-center overflow-hidden flex items-center justify-center rounded-xl p-4">
-      {logo && 
-      <Image 
-        src={logo}
-        alt="Sponsor or Media Partner Logo"
-        style={{ maxHeight: '100%', maxWidth: '100%' }}
-      />}
+    <figure
+      className={cn(
+        "relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-xl object-center p-4",
+        size === "lg" ? "h-36 w-full" : "h-24 w-48",
+      )}
+    >
+      {logo && (
+        <Image
+          src={logo}
+          alt="Sponsor or Media Partner Logo"
+          style={{ maxHeight: "100%", maxWidth: "100%" }}
+        />
+      )}
     </figure>
   );
 };
@@ -65,6 +78,7 @@ export function SponsorMediaSection() {
         <Marquee pauseOnHover className="[--duration:10s]">
           {firstRow.map((sponsorMediaPartner) => (
             <SponsorMediaPartnerCard
+              size="lg"
               key={sponsorMediaPartner.name}
               logo={sponsorMediaPartner.logo}
             />

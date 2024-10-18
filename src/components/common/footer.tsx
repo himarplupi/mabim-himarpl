@@ -3,14 +3,17 @@
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 
+import { cn } from "@/lib/utils";
+
 const navLinks = [
   {
     name: "Booklet",
+    disabled: true,
     href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/booklet.pdf",
   },
   {
     name: "Twibbon",
-    href: "https://drive.google.com",
+    href: "https://s.id/TwibbonMABIMRPL2024",
   },
   {
     name: "Lihat Kelompok",
@@ -26,6 +29,7 @@ const navLinks = [
   },
   {
     name: "Nametag",
+    disabled: true,
     href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/template-nametag.pdf",
   },
   {
@@ -68,10 +72,22 @@ export function Footer() {
           {navLinks.map((link) => (
             <li key={link.name} className="overflow-hidden">
               <Link
-                className="inline-block font-bonobo text-lg leading-5 text-primary-200 hover:underline"
+                className={cn(
+                  "inline-block font-bonobo text-lg leading-5 text-primary-200 hover:underline",
+                  {
+                    "pointer-events-none opacity-50 hover:no-underline":
+                      link.disabled,
+                  },
+                )}
                 href={link.href}
                 target={isExternalLink(link.href) ? "_blank" : undefined}
-                onClick={(e) => handleLinkClick(link.href, e)}
+                onClick={(e) => {
+                  if (link.disabled) {
+                    e.preventDefault();
+                    return;
+                  }
+                  handleLinkClick(link.href, e);
+                }}
               >
                 {link.name}
               </Link>
