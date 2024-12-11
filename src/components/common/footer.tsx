@@ -8,8 +8,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   {
     name: "Booklet",
-    disabled: true,
-    href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/booklet.pdf",
+    href: "https://s.id/BookletMABIMRPL2024",
   },
   {
     name: "Twibbon",
@@ -26,11 +25,6 @@ const navLinks = [
   {
     name: "FAQ",
     href: "#faq",
-  },
-  {
-    name: "Nametag",
-    disabled: true,
-    href: "https://cdn.jsdelivr.net/gh/himarplupi/assets@main/mabim/2024/template-nametag.pdf",
   },
   {
     name: "Surat Keterangan Izin",
